@@ -1,0 +1,58 @@
+{
+  "home": {
+    "header": {
+      "button": "asdasd",
+      "info": "Welcome to Waqanki Ecolodge! \nWe are much more than just a lodge. We are a Private Conservation Reserve that was born from the initiative of a family passionate about the preservation of nature. Our story began with the concern for the intensive extraction of orchids in the Alto Mayo, a region rich in biodiversity. \nWe decided to take action and allocate a space dedicated exclusively to the conservation of these beautiful flowers in their natural state. Today, we are proud to have an orchid garden that houses more than 250 species, each one more impressive than the last. \nBut our mission does not stop here. Amidst the constant deforestation caused by agricultural and livestock production in the region, we have set aside an impressive 104 hectares of forest for conservation. Here, we have identified more than 400 bird species, thus contributing to the protection and revitalization of bird diversity in the area. \nAt Waqanki Ecolodge, you will not only find an exceptional place to stay, but you will also immerse yourself in a world of natural beauty and conservation. Join us on this exciting journey towards a sustainable future and discover the magic of biodiversity in the heart of nature. We welcome you to a unique experience at Waqanki Ecolodge!"
+    },
+    "services": {
+      "service-1": {
+        "title": "Jardín de Orquídeas",
+        "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies",
+        "image": "service1",
+        "icon": "💮"
+      },
+      "service-2": {
+        "title": "Observatorio de Colibríes",
+        "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies.",
+        "image": "service2",
+        "icon": "🐦"
+      },
+      "service-3": {
+        "title": "Alojamiento y Restaurante",
+        "description": "Contamos con habitaciones simples, dobles y matrimoniales, las mismas que encuentran en contacto con la naturaleza. Nuestro restaurant ofrece platos típicos y nacionales, según la demanda del cliente.",
+        "image": "service3",
+        "icon": "🛏️"
+      },
+      "service-4": {
+        "title": "Ruta del café",
+        "description": "Waqanki ofrece un recorrido por una finca de café 100% orgánico y cultivado bajo arboles de sombra propios de la zona, conociendo el proceso de producción, post producción y comercialización del café.",
+        "image": "service4",
+        "icon": "☕"
+      },
+      "service-5": {
+        "title": "Trochas para observación de aves",
+        "description": "Waqanki tiene 3 trochas para observación de aves en donde se pueden encontrar más de 400 especies de aves, distribuidas en las 104 hectáreas.",
+        "image": "service5",
+        "icon": "🔭"
+      },
+      "service-6": {
+        "title": "Caminatas en el bosque y visita a cascadas",
+        "description": "En Waqanki Ecolodge también se puede realizar caminatas o tracking a través de las trochas, finalizando el recorrido en una cascada con una caída de agua de aproximadamente 10 metros de altura",
+        "image": "service6",
+        "icon": "🌊"
+      },
+      "see-more": "See more"
+    },
+    "rooms": {
+      "room-1": "Habitación doble",
+      "room-2": "Habitación matrimonial",
+      "room-3": "Habitación simple",
+      "options": {
+        "opt-1": "Desayuno buffet",
+        "opt-2": "Ingreso a trochas de observación de aves",
+        "opt-3": "Ingreso a observatorio de colibríes",
+        "opt-4": "Ingreso a jardines de orquídeas"
+      }
+    }
+  }
+}

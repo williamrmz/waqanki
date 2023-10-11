@@ -1,0 +1,97 @@
+<form class="room-ctn-revervation">
+  <input
+    class="room-input"
+    type="text"
+    placeholder="Nombres"
+    required
+    minlength="4"
+    maxlength="20"
+  />
+  <input
+    class="room-input"
+    type="text"
+    placeholder="Apellidos"
+    required
+    minlength="4"
+    maxlength="20"
+  />
+  <input
+    class="room-input"
+    type="email"
+    placeholder="Correo"
+    required
+    minlength="7"
+    maxlength="20"
+  />
+  <input
+    class="room-input"
+    type="tel"
+    placeholder="Celular / Telf"
+    required
+    minlength="6"
+    maxlength="20"
+  />
+  <input
+    class="room-input"
+    type="text"
+    placeholder="Fecha de llegada"
+    required
+    minlength="3"
+    maxlength="30"
+  />
+  <input
+    class="room-input"
+    type="text"
+    placeholder="Fecha de salida"
+    required
+    minlength="3"
+    maxlength="30"
+  />
+  <button class="room-button" type="submit">Solicitar reserva</button>
+</form>
+
+<style>
+
+  .room-ctn-revervation {
+    background-color: #b5483f;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    row-gap: 8px;
+    width: 100%;
+  }
+
+  .room-input {
+    border-radius: 4px;
+    height: 16px;
+    font-size: 1.6rem;
+    padding: 8px 16px;
+    border: 1px solid #4c201f;
+  }
+
+  .room-input::placeholder {
+    font-size: 1.4rem;
+  }
+
+  .room-button {
+    background-color: #4d1f1d;
+    border-radius: 1em;
+    border: 1px solid #4c201f;
+    color: #eee;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 0.5em 0.75em;
+    transition:
+      color 0.15s ease-in-out,
+      background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out,
+      box-shadow 0.15s ease-in-out;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-top: 0.75em;
+    font-weight: 600;
+  }
+</style>

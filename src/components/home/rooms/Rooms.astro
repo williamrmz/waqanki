@@ -1,0 +1,172 @@
+---
+import Form from "./Form.astro";
+import Swiper from "./SwiperRoom.astro";
+
+import { t } from "i18next";
+
+const ROOM_1_TEXT = t("home.rooms.room-1");
+const ROOM_2_TEXT = t("home.rooms.room-2");
+const ROOM_3_TEXT = t("home.rooms.room-3");
+
+const OPTION_1_TEXT = t("home.rooms.options.opt-1");
+const OPTION_2_TEXT = t("home.rooms.options.opt-2");
+const OPTION_3_TEXT = t("home.rooms.options.opt-3");
+const OPTION_4_TEXT = t("home.rooms.options.opt-4");
+---
+
+<section class="rooms-ctn" id="reserves">
+  <h2 class="rooms-title">Nuestras Habitaciones</h2>
+  <div class="rooms-cards-slider">
+    <Swiper />
+    <div class="rooms-info-ctn">
+      <div class="room-ctn-text room-ctn-show">
+        <p class="room-title">{ROOM_1_TEXT}</p>
+        <p class="room-price">$90</p>
+      </div>
+      <div class="room-ctn-text">
+        <p class="room-title">{ROOM_2_TEXT}</p>
+        <p class="room-price">$90</p>
+      </div>
+      <div class="room-ctn-text">
+        <p class="room-title">{ROOM_3_TEXT}</p>
+        <p class="room-price">$70</p>
+      </div>
+  
+      <div class="room-ctn-options">
+        <p class="room-option">
+          {OPTION_1_TEXT}
+        </p>
+        <p class="room-option">
+          {OPTION_2_TEXT}
+        </p>
+        <p class="room-option">
+          {OPTION_3_TEXT}
+        </p>
+        <p class="room-option">
+          {OPTION_4_TEXT}
+        </p>
+      </div>
+  
+      <Form />
+    </div>
+  </div>
+
+  <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="rooms-wave">
+    <path
+      d="M-1.97,94.23 C62.92,69.56 362.58,106.08 500.84,86.34 L500.00,150.00 L-1.41,151.47 Z"
+      fill="#3fb54b"></path>
+  </svg>
+</section>
+
+<style>
+  .rooms-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0 16px; */
+    padding: 0 26px;
+    position: relative;
+    row-gap: 24px;
+    margin-top: 75px;
+  }
+
+  .rooms-title {
+    color: #13260f;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 100%;
+  }
+
+  .rooms-cards-slider {
+    width: 100%;
+    max-width: 420px;
+    z-index: 2;
+    border-radius: 9px;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+  }
+
+  .room-ctn-wave {
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .rooms-wave {
+    height: 120%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .room-ctn-text,
+  .room-ctn-options,
+  .room-ctn-revervation {
+    box-sizing: border-box;
+    background-color: #b5483f;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    display: none;
+  }
+
+  .room-ctn-text {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .room-ctn-options {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .room-ctn-show {
+    display: flex;
+  }
+
+  .room-title,
+  .room-price,
+  .room-option {
+    color: #eee;
+    width: 100%;
+    text-wrap: nowrap;
+    margin: 0;
+  }
+
+  .room-title {
+    font-size: 2.25rem;
+  }
+
+  .room-price {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: end;
+  }
+
+  .room-option {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 1136px) {
+    .rooms-cards-slider {
+      display: flex;
+      max-width: 956px;
+    }
+
+    .rooms-info-ctn {
+      display: flex;
+      flex-direction: column;
+      min-width: 342px;
+    }
+
+    .rooms-wave {
+      height: 130%;
+    }
+  }
+
+</style>

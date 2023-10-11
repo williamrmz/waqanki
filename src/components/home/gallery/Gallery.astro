@@ -1,0 +1,180 @@
+---
+import { Image } from "astro:assets";
+import bird from "../../../images/gallery_bird.jpg";
+import orquide from "../../../images/gallery_orquide.jpg";
+import ebird from "../../../images/ebird.jpg";
+import arrowRight from "../../../images/arrow_right.svg";
+---
+
+<section class="gallery-ctn" id="gallery">
+  <h2 class="gallery-title">Gallería</h2>
+
+  <div class="gallery-card">
+    <Image class="gallery-card-img" src={orquide} alt="orquide gallery" />
+    <div class="gallery-card-info">
+      <h3 class="gallery-card-info-title">Orquídeas</h3>
+      <p class="gallery-card-info-desc">
+        Waqanki posee una extensa área de terreno dedicada a la preservación de
+        más de 250 especies de orquídeas y otras plantas ornamentales de la
+        Amazonia Peruana.
+      </p>
+      <a class="gallery-button" href="/orchids"
+        >Ver galería de orquídeas
+        <Image
+          class="gallery-button-icon"
+          src={arrowRight}
+          alt="arrow right"
+        /></a
+      >
+    </div>
+  </div>
+  <div class="gallery-card">
+    <div class="gallery-card-info">
+      <h3 class="gallery-card-info-title">Aves</h3>
+      <p class="gallery-card-info-desc">
+        Un rincón paradisíaco para colibríes y aves, un viaje que brinda a los
+        amantes de la naturaleza un inolvidable encuentro con este fascinante
+        mundo.
+      </p>
+      <a class="gallery-button" href="/birds"
+        >Ver galería de aves
+        <Image class="gallery-button-icon" src={arrowRight} alt="arrow right" />
+      </a>
+      <a
+        class="gallery-button-ebird"
+        href="https://ebird.org/home"
+        target="_blank"
+      >
+        <Image class="gallery-button-img" src={ebird} alt="ebird" />
+      </a>
+    </div>
+    <Image class="gallery-card-img" src={bird} alt="bird gallery" />
+  </div>
+</section>
+
+<style>
+  .gallery-ctn {
+    display: flex;
+    flex-direction: column;
+    background-color: #3fb54b;
+    row-gap: 24px;
+    padding: 0 36px;
+    align-items: center;
+    margin-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .gallery-title {
+    color: #f2f2f2;
+    font-size: 4rem;
+    /* margin-top: 75px; */
+    text-align: center;
+  }
+
+  .gallery-card {
+    /* height: 430px; */
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+    border: 1px solid #41632a;
+    max-width: 420px;
+  }
+
+  .gallery-card-info {
+    background-color: white;
+    padding: 4em 6em;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .gallery-card-info-title {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  .gallery-card-info-desc {
+    font-size: 1.75rem;
+    line-height: 125%;
+  }
+
+  .gallery-button,
+  .gallery-button:visited,
+  .gallery-button:link {
+    align-items: center;
+    background: rgb(77, 31, 29);
+    background: linear-gradient(
+      145deg,
+      rgba(77, 31, 29, 1) 0%,
+      rgba(97, 47, 45, 1) 100%
+    );
+    border-radius: 1em;
+    color: #eee;
+    display: inline-flex;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin-top: 8px;
+    margin: 0 auto;
+    padding: 0.5em 0.75em;
+    text-align: center;
+    text-decoration: none;
+    width: max-content;
+  }
+
+  .gallery-button-icon {
+    margin-left: 4px;
+  }
+
+  .gallery-button-ebird,
+  .gallery-button-ebird:visited,
+  .gallery-button-ebird:link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #eee;
+    border: 1px solid #4d1f1d;
+    border-radius: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .gallery-button-img {
+    object-fit: contain;
+    width: auto;
+    height: 40px;
+  }
+
+  .gallery-card-img {
+    height: 245px;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-ctn {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-title {
+      flex-grow: 1;
+      flex-basis: 100%
+    }
+
+    .gallery-card-info {
+      flex-grow: 1;
+    }
+  }
+</style>

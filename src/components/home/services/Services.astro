@@ -1,0 +1,58 @@
+---
+import Swiper from "./Swiper.astro";
+---
+
+<section class="services-ctn" id="services">
+  <h2 class="services-title">Nuestros Servicios</h2>
+  <button class="services-prices-button"
+    >Horarios de atención y precios 💵</button
+  >
+  <!-- <div class="services-cards-slider"> -->
+    <Swiper />
+  <!-- </div> -->
+</section>
+
+<style>
+  .services-ctn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 26px;
+    row-gap: 16px;
+    margin-top: 75px;
+    position: relative;
+  }
+
+  .services-title {
+    color: #13260f;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 100%;
+  }
+
+  .services-prices-button {
+    background-color: transparent;
+    border-radius: 1.6em;
+    border: 2px solid #13260f;
+    color: #13260f;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 0.5em 0.75em;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 12px;
+  }
+
+  .services-cards-slider {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  @media (min-width: 768px) {
+    .services-cards-slider {
+      max-width: 1000px;
+    }
+  }
+</style>

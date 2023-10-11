@@ -1,0 +1,52 @@
+{
+  "home": {
+    "header": {
+      "button": "Descúbrenos",
+      "info": "¡Bienvenidos a Waqanki Ecolodge! \nSomos mucho más que un simple alojamiento. Somos una Reserva de Conservación Privada que nació de la iniciativa de una familia apasionada por la preservación de la naturaleza. Nuestra historia comenzó con la preocupación por la extracción intensiva de orquídeas en el Alto Mayo, una región rica en biodiversidad. \nDecidimos tomar acción y asignar un espacio dedicado exclusivamente a la conservación de estas hermosas flores en su estado natural. Hoy, estamos orgullosos de contar con un jardín de orquídeas que alberga más de 250 especies, cada una más impresionante que la anterior. \nPero nuestra misión no se detiene aquí. En medio de la constante deforestación causada por la producción agrícola y ganadera en la región, hemos reservado un área impresionante de 104 hectáreas de bosque para la conservación. Aquí, hemos identificado más de 400 especies de aves, contribuyendo así a la protección y revitalización de la diversidad de aves en la zona. \nEn Waqanki Ecolodge, no solo encontrarás un lugar de alojamiento excepcional, sino que también te sumergirás en un mundo de belleza natural y conservación. Únete a nosotros en este apasionante viaje hacia un futuro sostenible y descubre la magia de la biodiversidad en pleno corazón de la naturaleza. ¡Te damos la bienvenida a una experiencia única en Waqanki Ecolodge!"
+    },
+    "services": {
+      "service-1": {
+        "title": "Jardín de Orquídeas",
+        "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies",
+        "icon": "💮"
+      },
+      "service-2": {
+        "title": "Observatorio de Colibríes",
+        "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies.",
+        "icon": "🐦"
+      },
+      "service-3": {
+        "title": "Alojamiento y Restaurante",
+        "description": "Contamos con habitaciones simples, dobles y matrimoniales, las mismas que encuentran en contacto con la naturaleza. Nuestro restaurant ofrece platos típicos y nacionales, según la demanda del cliente.",
+        "icon": "🛏️"
+      },
+      "service-4": {
+        "title": "Ruta del café",
+        "description": "Waqanki ofrece un recorrido por una finca de café 100% orgánico y cultivado bajo arboles de sombra propios de la zona, conociendo el proceso de producción, post producción y comercialización del café.",
+        "icon": "☕"
+      },
+      "service-5": {
+        "title": "Trochas para observación de aves",
+        "description": "Waqanki tiene 3 trochas para observación de aves en donde se pueden encontrar más de 400 especies de aves, distribuidas en las 104 hectáreas.",
+        "icon": "🔭"
+      },
+      "service-6": {
+        "title": "Caminatas en el bosque y visita a cascadas",
+        "description": "En Waqanki Ecolodge también se puede realizar caminatas o tracking a través de las trochas, finalizando el recorrido en una cascada con una caída de agua de aproximadamente 10 metros de altura",
+        "icon": "🌊"
+      },
+      "see-more": "Ver más"
+    },
+    "rooms": {
+      "room-1": "Habitación doble",
+      "room-2": "Habitación matrimonial",
+      "room-3": "Habitación simple",
+      "options": {
+        "opt-1": "🥞 Desayuno buffet",
+        "opt-2": "🦚 Ingreso a trochas de observación de aves",
+        "opt-3": "🐦 Ingreso a observatorio de colibríes",
+        "opt-4": "⚜️ Ingreso a jardines de orquídeas"
+      }
+    }
+  }
+}

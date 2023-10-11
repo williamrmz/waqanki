@@ -1,0 +1,58 @@
+---
+interface Props {
+  opacity: string;
+  position: string;
+}
+
+const { opacity, position } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 500 150"
+  preserveAspectRatio="none"
+  class={`header-wave-svg ${position}`}
+>
+  <path
+    d="M-18.34,96.20 C174.09,44.89 372.74,185.03 501.97,116.94 L500.00,150.00 L0.00,150.00 Z"
+    style={{
+      stroke: "none",
+      fill: "#EEEEEE",
+      opacity: opacity,
+    }}></path>
+</svg>
+
+<style>
+  .header-wave-first {
+    height: 200px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .header-wave-second {
+    height: 160px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .header-wave-third {
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+  }
+
+  .header-wave-svg {
+    width: 100%;
+  }
+</style>

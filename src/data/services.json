@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Jardín de Orquídeas",
+    "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies",
+    "image": "service1",
+    "icon": "💮"
+  },
+  {
+    "title": "Observatorio de Colibríes",
+    "description": "El Jardín de Orquideas cuenta con más de 250 especies de orquídeas, diversidad de bromelias, heliconeas, begonias y plantas ornamentales, en donde se realiza recorridos guiados los cuales tiene una duración de 30 minutos aproximadamente, donde también se puede realizar fotografía de estas especies.",
+    "image": "service2",
+    "icon": "🐦"
+  },
+  {
+    "title": "Alojamiento y Restaurante",
+    "description": "Contamos con habitaciones simples, dobles y matrimoniales, las mismas que encuentran en contacto con la naturaleza. Nuestro restaurant ofrece platos típicos y nacionales, según la demanda del cliente.",
+    "image": "service3",
+    "icon": "🛏️"
+  },
+  {
+    "title": "Ruta del café",
+    "description": "Waqanki ofrece un recorrido por una finca de café 100% orgánico y cultivado bajo arboles de sombra propios de la zona, conociendo el proceso de producción, post producción y comercialización del café.",
+    "image": "service4",
+    "icon": "☕"
+  },
+  {
+    "title": "Trochas para observación de aves",
+    "description": "Waqanki tiene 3 trochas para observación de aves en donde se pueden encontrar más de 400 especies de aves, distribuidas en las 104 hectáreas.",
+    "image": "service5",
+    "icon": "🔭"
+  },
+  {
+    "title": "Caminatas en el bosque y visita a cascadas",
+    "description": "En Waqanki Ecolodge también se puede realizar caminatas o tracking a través de las trochas, finalizando el recorrido en una cascada con una caída de agua de aproximadamente 10 metros de altura",
+    "image": "service6",
+    "icon": "🌊"
+  }
+]

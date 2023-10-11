@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/home/header/Header.astro";
+import Services from "../components/home/services/Services.astro";
+import Video from "../components/home/Video.astro";
+import Rooms from "../components/home/rooms/Rooms.astro";
+import Gallery from "../components/home/gallery/Gallery.astro";
+import Tours from "../components/home/tours/Tours.astro";
+import { changeLanguage } from "i18next";
+
+changeLanguage("es");
+---
+
+<Layout title="Welcome to Astro.">
+  <Header />
+  <Services />
+  <Video />
+  <Rooms />
+  <Gallery />
+  <Tours />
+</Layout>

@@ -1,0 +1,51 @@
+---
+import tour1 from "../../../images/tour_main.jpg";
+import tour2 from "../../../images/tour_scarlet.jpg";
+import tour3 from "../../../images/tour_white.jpg";
+import tour4 from "../../../images/tour_yellow.jpg";
+import Card from "./Card.astro";
+---
+
+<section class="tours-ctn" id="tours">
+  <h2 class="tours-title">Tours</h2>
+  <div class="tours-cards-ctn">
+    <Card title="Northen Perú" src={tour1} index="1" route="/tour-northen" />
+    <Card title="Scarlet Banded Barbet" src={tour2} index="2" route="/tour-scarlet" />
+    <Card title="White-Masket Antibird" src={tour3} index="3" route="/tour-white" />
+    <Card title="Yellow Faced Parrotlet-Purple Backed Subean" src={tour4} index="4" route="/tour-yellow" />
+  </div>
+
+</section>
+
+<style>
+  .tours-ctn {
+    display: flex;
+    flex-direction: column;
+    background-color: #3fb54b;
+    row-gap: 24px;
+    padding: 0 36px;
+    align-items: center;
+  }
+
+  .tours-title {
+    color: #f2f2f2;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .tours-cards-ctn {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  
+  @media (min-width: 1136px) {
+    .tours-cards-ctn {
+      width: 880px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+</style>

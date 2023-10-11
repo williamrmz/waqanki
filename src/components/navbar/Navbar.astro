@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../images/logo_white.png";
+import { LanguageSelector } from "astro-i18next/components";
+import Eeuu from "../sources/Eeuu.astro";
+import Spain from "../sources/Spain.astro";
+import i18next from "i18next";
+
+const currentLanguage = i18next.language;
+// console.log('currentLanguage', currentLanguage);
+---
+
+<script>
+  const button = document.querySelector<HTMLElement>(".nav-button");
+  const list = document.querySelector<HTMLElement>(".nav-list");
+  const links: any = document.querySelectorAll<HTMLElement>(".nav-link");
+  if (button) {
+    button.onclick = () => {
+      list?.classList.toggle("nav-list-active");
+    };
+  }
+
+  if (links) {
+    links.forEach(
+      (link: any) =>
+        (link.onclick = () => {
+          list?.classList.toggle("nav-list-active");
+        })
+    );
+  }
+</script>
+
+<nav class="nav-ctn">
+  <a class="nav-link" href="/">
+    <Image class="nav-logo" src={logo} alt="Logo Waqanki" />
+  </a>
+  <button class="nav-button">
+    <span class="nav-burger"></span>
+  </button>
+  <nav class="nav-list">
+    <a class="nav-link" href="#header">Inicio</a>
+    <a class="nav-link" href="#services">Servicios</a>
+    <a class="nav-link" href="#reserves">Reservas</a>
+    <a class="nav-link" href="#gallery">Galería</a>
+    <a class="nav-link" href="#tours">Tours</a>
+    <div class="nav-select-ctn">
+      {currentLanguage === 'es' ? <Spain /> : <Eeuu /> }
+      <LanguageSelector showFlag={false} class="nav-select" />
+    </div>
+  </nav>
+</nav>
+
+<style>
+  .nav-ctn {
+    align-items: center;
+    background-color: rgba(000, 000, 000, 0.85);
+    box-sizing: border-box;
+    display: grid;
+    justify-content: space-between;
+    padding: 8px 12px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    grid-template:
+      "logo burger" auto
+      "list list" auto;
+    overflow: hidden;
+  }
+
+  .nav-list {
+    align-items: center;
+    color: transparent;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.75rem;
+    gap: 16px;
+    grid-area: list;
+    justify-content: center;
+    list-style: none;
+    max-height: 0px;
+    pointer-events: none;
+  }
+
+  .nav-list-active {
+    color: #eee;
+    max-height: 1000px;
+    pointer-events: all;
+  }
+
+  .nav-link,
+  .nav-link:link,
+  .nav-link:visited,
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:focus-within {
+    text-decoration: none;
+    color: inherit;
+    cursor: none;
+    outline: none;
+    background-color: transparent;
+    user-select: none;
+  }
+
+  .nav-logo {
+    height: 100%;
+    max-width: 130px;
+    padding: 5px 0;
+  }
+
+  .nav-link {
+    grid-area: logo;
+  }
+
+  .nav-button {
+    border-radius: 7px;
+    height: max-content;
+    width: max-content;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    outline: inherit;
+    padding: 4px 8px;
+    grid-area: burger;
+  }
+
+  .nav-burger {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+    width: 30px;
+  }
+
+  .nav-select-ctn {
+    display: flex;
+    gap: 8px;
+  }
+
+  .nav-select {
+    font-size: 1.55rem;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    outline: none;
+  }
+
+  @media (min-width: 768px) {
+    .nav-ctn {
+      grid-template:
+        "logo list" auto
+        "burger burger" 0;
+      padding: 8px 24px;
+      /* background-color: rgba(000, 000, 000, 0.75); */
+    }
+
+    .nav-list {
+      color: #eee;
+      flex-direction: row;
+      pointer-events: all;
+    }
+
+    .nav-button {
+      display: none;
+    }
+
+    .nav-link,
+    .nav-link:link,
+    .nav-link:visited,
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link:focus-within {
+      cursor: pointer;
+    }
+
+    .nav-select-ctn {
+      margin-left: 12px;
+    }
+  }
+</style>
