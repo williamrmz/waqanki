@@ -2,15 +2,15 @@
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
-import image from "../../images/tour_main.jpg";
+import image from "../../images/tour_yellow.jpg";
 import CardItinerary from "../../components/tour/CardItinerary.astro";
 import { t } from "i18next";
 
 const DAY = t(`tours.day`);
-const TITLE = t(`tours.main.title`);
+const TITLE = t(`tours.yellow.title`);
 changeLanguage("es");
 
-const arrayItinerary = new Array(16).fill("");
+const arrayItinerary = new Array(7).fill("");
 ---
 
 <Layout title="Welcome to Astro.">
@@ -24,11 +24,11 @@ const arrayItinerary = new Array(16).fill("");
         <Image
           class="w-full h-full object-cover brightness-50 rounded-lg shadow-xl"
           src={image}
-          alt="Tour main"
+          alt="Tour yellow"
         />
 
         <h1 class="absolute z-10 text-6xl text-slate-50 text-center">
-          Northen Perú
+          Yellow Faced Parrotlet-Purple Backed Sunbean
         </h1>
       </div>
 
@@ -51,8 +51,8 @@ const arrayItinerary = new Array(16).fill("");
           arrayItinerary.map((_, index) => (
             <CardItinerary
               title={DAY + " " + index}
-              info={t(`tours.main.info-${index}`)}
-              ubication={t(`tours.main.ubication-${index}`)}
+              info={t(`tours.yellow.info-${index}`)}
+              ubication={t(`tours.yellow.ubication-${index}`)}
             />
           ))
         }

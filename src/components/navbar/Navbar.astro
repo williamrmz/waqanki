@@ -30,7 +30,7 @@ const currentLanguage = i18next.language;
   }
 </script>
 
-<nav class="nav-ctn">
+<nav class="fixed box-border grid items-center justify-between w-full z-50 nav-ctn">
   <a class="nav-link" href="/">
     <Image class="nav-logo" src={logo} alt="Logo Waqanki" />
   </a>
@@ -52,16 +52,16 @@ const currentLanguage = i18next.language;
 
 <style>
   .nav-ctn {
-    align-items: center;
+    /* align-items: center; */
     background-color: rgba(000, 000, 000, 0.85);
-    box-sizing: border-box;
-    display: grid;
-    justify-content: space-between;
+    /* box-sizing: border-box; */
+    /* display: grid; */
+    /* justify-content: space-between; */
     padding: 8px 12px;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
-    width: 100%;
-    z-index: 99;
+    /* width: 100%; */
+    /* z-index: 99; */
     grid-template:
       "logo burger" auto
       "list list" auto;
@@ -147,6 +147,7 @@ const currentLanguage = i18next.language;
     border-radius: 1rem;
     padding: 0.25rem;
     outline: none;
+    color: black;
   }
 
   @media (min-width: 768px) {

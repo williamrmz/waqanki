@@ -1,7 +1,7 @@
 {
   "home": {
     "header": {
-      "button": "Descúbrenos",
+      "button": "Descúbrenos!",
       "info": "¡Bienvenidos a Waqanki Ecolodge! \nSomos mucho más que un simple alojamiento. Somos una Reserva de Conservación Privada que nació de la iniciativa de una familia apasionada por la preservación de la naturaleza. Nuestra historia comenzó con la preocupación por la extracción intensiva de orquídeas en el Alto Mayo, una región rica en biodiversidad. \nDecidimos tomar acción y asignar un espacio dedicado exclusivamente a la conservación de estas hermosas flores en su estado natural. Hoy, estamos orgullosos de contar con un jardín de orquídeas que alberga más de 250 especies, cada una más impresionante que la anterior. \nPero nuestra misión no se detiene aquí. En medio de la constante deforestación causada por la producción agrícola y ganadera en la región, hemos reservado un área impresionante de 104 hectáreas de bosque para la conservación. Aquí, hemos identificado más de 400 especies de aves, contribuyendo así a la protección y revitalización de la diversidad de aves en la zona. \nEn Waqanki Ecolodge, no solo encontrarás un lugar de alojamiento excepcional, sino que también te sumergirás en un mundo de belleza natural y conservación. Únete a nosotros en este apasionante viaje hacia un futuro sostenible y descubre la magia de la biodiversidad en pleno corazón de la naturaleza. ¡Te damos la bienvenida a una experiencia única en Waqanki Ecolodge!"
     },
     "services": {
@@ -47,6 +47,92 @@
         "opt-3": "🐦 Ingreso a observatorio de colibríes",
         "opt-4": "⚜️ Ingreso a jardines de orquídeas"
       }
+    }
+  },
+  "tours": {
+    "day": "Día",
+    "main": {
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, incluyendo bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nEl cliente tiene la flexibilidad de elegir la región que le gustaría explorar o las especies de aves que desea avistar o fotografiar.\n\nNuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario que abarca un mínimo de 5 días para garantizar una experiencia enriquecedora.",
+
+      "info-0": "Llegada en 1 hora y 20 minutos a Tarapoto desde el aeropuerto de Lima. Te recogeremos en el aeropuerto y te trasladaremos al hotel.",
+      "info-1": "Pasaremos toda la mañana en Aconabikh, que es una reserva privada a 40 minutos en coche desde Tarapoto. Esta reserva cuenta con comederos para colibríes, donde podrás observar especies como el ermitaño de Koepcke, Jeulfront de Gould y muchas otras. También realizaremos senderos en busca de saltamontes de cabeza dorada en un lek, así como la observación de aves como el plumaje blanco hormiguero. Luego, nos trasladaremos a Moyobamba con una parada en la carretera principal para ver los guácharos.",
+      "info-2": "Día completo en la Reserva de Wakanqi. Por la mañana, haremos el sendero hasta la cresta, que se encuentra a unos 4 km de distancia. Este sendero es especial para observar aves como el hormiguero garganta ceniza, tirano tody garganta pulida, papamoscas de pecho oliváceo, cola de espina oscura, tangara de hombros rojos, cola de espina de pecho negro, saltarín rayado, lanceolado monkled, entre otros. Por la tarde, buscaremos aves en el bosque de sabana, que está a 30 minutos en coche desde el albergue. Podrás ver especies como el tirano tody perlado, tirano tody de cuello rayado, hormiguero de lomo oxidado, pinzón de cola de cuña, crake de red rojiza, halcón del bosque de bucklie. Esta zona es propicia para la observación de búhos y chotacabras, incluyendo el búho estigio, búho tropical, búho rayado, chotacabras de cola puntiaguda y chotacabras rufo.",
+      "info-3": "Comenzaremos temprano saliendo del albergue a las 5:00 a. m. para ir a la Reserva Tingana, donde permaneceremos durante todo el día. Este lugar es poco visitado por observadores de aves. Aquí podrás encontrar a los 5 martines pescadores presentes en el Perú, así como otras aves del norte amazónico. Además, tendrás la oportunidad de observar aves como el largo trepatroncos de pico, saltamontes de banda y otras aves acuáticas.",
+      "info-4": "Día completo en la Reserva de Wakanqi. Por la mañana, realizaremos el sendero en la parte baja del área. Por la tarde, buscaremos aves en el albergue y también nos alojaremos en los comederos de colibríes. Waqanki tiene el mejor lugar para ver colibríes en el Perú, con 16 especies posibles para observar, incluyendo el ermitaño de garganta negra, la coqueta crestada de Rufou, el zafre de mentón blanco, el ermitaño de cola larga y muchas otras especies.",
+      "info-5": "Salida temprano del albergue a las 4:45 a. m. para ir a la Reserva Arena Blanca y esperar en los comederos de tinamúes. Comienzan a alimentarse a partir de las 6:30 a. m. Podrás observar especies como el tinamú cinéreo, tinamú pequeño, codorniz de pecho rufo, y también habrá comederos para colibríes, donde podrás ver al Lancelbil de frente azul, numerosas especies de colibríes manchados, la cola de espino con cresta de alambre y muchas otras. Luego, nos trasladaremos a Fundo Alto Nieva, haciendo algunas paradas para unirnos a bandadas de tangara. En este lugar, encontrarás buenos comederos para colibríes, ideales para observar al Puffleg verde, raquettail con botas, punta blanca rufo ventilada, Royal sunagel, y también intentaremos observar al mochuelo de Long Wisquered en la noche, ya que este lugar ofrece un camino más accesible para encontrarlo.",
+      "info-6": "Comenzaremos observando a la antpitta teñida de herrumbre alimentándose. Luego, nos trasladaremos a la carretera principal en busca de bandadas mixtas de aves, incluyendo la tangara bermellona, piha olivácea, tangara garganta amarilla, entre otras. En el albergue, podremos buscar al reyezuelo con alas de barra y al papamoscas de pecho canela, así como la tangara de cabeza blanca.",
+      "info-7": "Por la mañana, iremos a la zona de afluentes y buscaremos bandadas mixtas que incluyen al Tyrannaulet ecuatoriano, Graytail Ecoatorian, Antvireo bicolor, Piedtail ecuatoriano y al Ermitaño verde. Por la tarde, nos trasladaremos al albergue de mochuelos y continuaremos nuestra búsqueda en el camino, buscando al papamoscas tody de Johnson, White-capped tangara, etc.",
+      "info-8": "Pasaremos un día completo en Owlet Lodge en busca de sus especialidades, que incluyen a la tangara de bufanda amarilla, la antpitta de frente ocre, la tangara verde hierba, el arrendajo de collar y muchas otras especies. Además, en este lugar, encontrarás comederos de colibríes con el silfo de cola larga, el brillante de pecho pálido, el esmeralda Puffleg de vientre, el Inca de collar, el colibrí pico de espada, entre otros.",
+      "info-9": "Tendremos una mañana completa para buscar las aves que aún nos faltan. Por la tarde, nos trasladaremos a Pomacochas para pasar la noche.",
+      "info-10": "Pasaremos un día completo en Owlet Lodge buscando sus especialidades, que incluyen la tangara de bufanda amarilla, la antpitta de frente ocre, la tangara verde hierba, el arrendajo de collar y muchas otras especies. Además, en este lugar, encontrarás comederos de colibríes con el silfo de cola larga, el brillante de pecho pálido, el esmeralda Puffleg de vientre, el Inca de collar, el colibrí pico de espada, entre otros.",
+      "info-11": "Por la mañana, subiremos a San Lorenzo, donde realizaremos una caminata en busca de la Antpitta pico pálido, el reyezuelo de cola llana, el reyezuelo peruano, el tirano titulado unstreak y otras especies. Durante el camino, buscaremos la forma de gorrión de cabeza negra del Marañón, la forma de reyezuelo de pecho manchado del Marañón, el Marañom trush y continuaremos observando aves en el camino hacia Jaén, donde buscaremos al Marañón Crescentchest, al Marañón Slaty-Antshrike, al Pinzón inca pequeño, al Chinchipe Spinetail, etc.",
+      "info-12": "Comenzaremos temprano y nos dirigiremos a Tamborapa para observar la subespecie peruana del búho chillón Marañón, la cola espina de Marañón y otras aves. Luego, emprenderemos un largo viaje de alrededor de 5 horas hacia Chiclayo. Haremos una parada en Abra Porcuya, donde buscaremos al piura chat tyrant, al henna encapuchado y a espigadores de follaje de cuello rufo. Posteriormente, continuaremos hacia Chiclayo.",
+      "info-13": "Nos trasladaremos al bosque de Pomac, que es un lugar ideal para observar aves del bosque seco del Pacífico, como el papamoscas rufo, el tumbes tyrat, la tumbes swallow, el plantcutte peruano, entre otros. Luego, regresaremos a Chiclayo y nos dirigiremos a Playa Santa Rosa para buscar al charrán peruano, la agachadiza menor, el tirano de muchos colores, el minero costero y otras aves marinas. Después de la playa, continuaremos hacia Chaparri, una reserva natural muy hermosa, donde buscaremos especies como la pava de ala blanca, el pinzón gorjeador de collar, el elegante crescentchest, el pinzón de azufre y muchas más.",
+      "info-14": "Pasaremos un día completo en Chaparri Lodge. Si estás interesado, podemos realizar una expedición caminando durante 1 hora y 30 minutos para ver al oso de anteojos en su entorno natural, donde vienen a beber en un pozo todos los días. También tendremos la oportunidad de observar aves en el camino. Luego, regresaremos al albergue y buscaremos todas las especialidades del bosque de Chaparri.",
+      "info-15": "Por la mañana, exploraremos el área de Casupe en busca de aves endémicas tumbesianas, como el trogón ecuatoriano, el piculet ecuatoriano, los espigadores de follaje de cuello rufo y encapuchado de henna, la paloma de vientre ocre, entre otras. Después, regresaremos al albergue y nos trasladaremos al aeropuerto, que se encuentra a 1 hora y 40 minutos del albergue.",
+
+      "ubication-0": "Hotel Rio Cumbaza-Tarapoto.",
+      "ubication-1": "Waqanki ecolodge-Moyobamba.",
+      "ubication-2": "Waqanki ecolodge-Moyobamba.",
+      "ubication-3": "Waqanki ecolodge-Moyobamba.",
+      "ubication-4": "Waqanki ecolodge-Moyobamba.",
+      "ubication-5": "Fundo Alto Nieva lodge.",
+      "ubication-6": "Fundo Alto Nieva lodge.",
+      "ubication-7": "Owlet Lodge-Abra Patricia.",
+      "ubication-8": "Owlet Lodge-Abra Patricia.",
+      "ubication-9": "Hotel Las Brisas-Pomacochas.",
+      "ubication-10": "Hotel Las Brisas-Pomacochas.",
+      "ubication-11": "Hotel Prim´s-Jaen.",
+      "ubication-12": "Hotel Inti-chiclayo.",
+      "ubication-13": "Chaparri lodge-lambayeque.",
+      "ubication-14": "Chaparri lodge-lambayeque.",
+      "ubication-15": "Transfer to the Airport in Chiclayo."
+    },
+    "scarlet": {
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
+      "info-0": "Llegamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Los recogeremos en el aeropuerto y los trasladaremos a Unidad Bellavista, lo cual tomará aproximadamente 1 hora y 50 minutos.",
+      "info-1": "Comenzamos alrededor de las 6:00 a.m. tomando un vehículo 4x4 y nos dirigimos a la plataforma. El viaje dura aproximadamente 6 horas, con algunas paradas en el camino para observar aves como el pewe atrasado y la piha de cola gris. Nuestra prioridad es encontrar el barbet con bandas escarlatas, que buscaremos por la tarde. El alojamiento es básico, con habitaciones confortables pero sin baños privados ni agua caliente. Por la noche, también podemos buscar lechuza vermiculada, lechuza rufescente y lechuza panza.",
+      "info-2": "Pasaremos todo el día buscando las especies endémicas de la zona y otras aves registradas, como el tucán de punta castaña, el frutero de pecho escarlata y escamoso, el trepador de Duida, el piha de cola gris, el periquito de frente rosa, el piedemonte schiffornis, el Spadebill, el Yellow-cheeked Becard, el Andean Laniesoma, el Roraiman Flycatcher, el Jet, el Yungas y el Blue-ripped Manakin, así como una nueva especie de hormiguero que fue descubierta recientemente.",
+      "info-3": "Regresamos a Bellavista y continuamos hacia Tarapoto. Tomaremos un desvío de 10 km desde la carretera principal hacia el bosque seco en el valle del Huallaga, donde buscaremos aves como el saltarín de vientre azufrado, la espátula de garganta castaña, el greenlet con cabeza cenicienta, el saltarín de cola de banda, el tirano pigmeo de vientre blanco, entre otros. Luego continuamos a Tarapoto por la noche.",
+      "info-4": "Puede continuar con nuestro itinerario hacia el norte de Perú desde Tarapoto o simplemente optar por el traslado al aeropuerto.",
+
+      "ubication-0": "Hotel Monte Verde-Bellavista.",
+      "ubication-1": "Hotel-Plataforma.",
+      "ubication-2": "Hotel-Plataforma.",
+      "ubication-3": "Hotel Rio Cumbaza-Tarapoto.",
+      "ubication-4": "Airport."
+    },
+    "white": {
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
+      "info-0": "Llegamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Nos recogerán en el aeropuerto y nos trasladarán a Yurimaguas, lo que tomará aproximadamente 2 horas y 30 minutos. Debemos llegar a Yurimaguas para tomar el vuelo al día siguiente.",
+      "info-1": "Tomamos un vuelo corto de Yurimaguas a San Lorenzo, un avión pequeño con capacidad para 5 personas. El vuelo tuvo una duración de aproximadamente 30 minutos y comenzó alrededor de las 8 a.m. desde Yurimaguas. Una vez en San Lorenzo, nos dirigimos al hotel y pasamos el resto del día en el área de observación de aves, que se encuentra a 30 minutos en mototaxi local desde el hotel. Buscamos especies como el hormiguero de máscara blanca, la cotinga roja de cuello negro, el tinamú garganta blanca, el tinamú jaspeado y el bartlett's, entre otros.",
+      "info-2": "Por la mañana completa, exploramos la zona del hormiguero enmascarado en busca de todas las especialidades que necesitamos encontrar. Después del almuerzo, nos enfocamos en la búsqueda de otras aves especiales, como el crake de banda negra, el halcón del bosque de Buckley, el camino de púas de cola pálida, el jacamar Paraíso y muchas más.",
+      "info-3": "Tomamos el primer vuelo de regreso a Yurimaguas y continuamos a Tarapoto, con una parada en un sitio de observación de aves llamado ACONAKIKH. En ese lugar, tuvimos la oportunidad de avistar al frailecillo de collar, el monjillo de cabeza rufo, el hormiguero de pluma blanca, el pájaro de cresta peluda y muchas otras especies.",
+      "info-4": "Podemos optar por seguir con nuestro itinerario hacia el norte de Perú desde Tarapoto o simplemente elegir el traslado al aeropuerto.",
+
+      "ubication-0": "Hotel Rio Huallaga-Yurimaguas.",
+      "ubication-1": "Hotel la posada del Apu-San Lorenzo.",
+      "ubication-2": "Hotel la posada del Apu-San Lorenzo.",
+      "ubication-3": "Hotel Rio Cumbaza-Tarapoto.",
+      "ubication-4": "Airport."
+    },
+    "yellow": {
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 6 días para garantizar una experiencia enriquecedora.",
+      "info-0": "Arribamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Nos recogieron en el aeropuerto y nos trasladaron al hotel.",
+      "info-1": "Exploramos los bosques en el valle de Atuen en busca de especies como el tucán de montaña de pecho gris, el cacique de montaña del norte, la tangara de capucha roja, el cazador de árboles de garganta de búfalo o de espalda rufa, entre otros. Observamos buenas bandadas de aves en esta área. Por la tarde, nos trasladamos a Abra Barro Negro para buscar aves como la Cola blanda de manto rojizo, la Cola de cardo de mentón blanco, la Cola de metal cobrizo, el Tapaculo negruzco y otras especies.",
+      "info-2": "Comenzamos en la parte baja del valle del Marañón, donde buscamos la cotorra cara amarilla y la paloma peruana. Continuamos hasta la Hacienda El Limón, donde tenemos la oportunidad de avistar aves muy especiales, como el pinzón inca de brida buff, el pinzón inca de alas grises, el espino castaño y el zorzal de Marañón. Luego continuamos hacia Celendín.",
+      "info-3": "En nuestro camino a Cajamarca, realizamos una parada en busca de la antpitta rufo (forma Cajamarca) y continuamos hacia Cruz Conga para buscar al Alcaudón de cola blanca tirano, el tirano de arbusto palmeado rufo, el pinzón de oreja rufo, el tirano de charla de Jelki y otras especies. Por la tarde, nos dirigimos a Río Chonta y pasamos un rato observando el cometa de vientre gris.",
+      "info-4": "Dedicamos más tiempo al área del cometa de vientre gris y también buscamos otras aves como el tirano de cresta negra, la cola de metal negro, la cola de cuervo oxidado, entre otras. Luego, nos trasladamos a Huamachuco, un largo trayecto en coche con una parada para observar a la gran cola de espina.",
+      "info-5": "Salimos temprano en coche hacia El Molino. El camino puede ser difícil, por lo que podría tomar hasta 3 horas desde Huamachuco. Buscamos al sunbeam con respaldo púrpura y avistamos algunas aves de la puna en el camino de regreso antes de continuar hacia Trujillo.",
+      "info-6": "Partimos temprano hacia Sinsicap en busca de la Colina de vientre rojizo, el tapaculo unicolor, el Piura Chat-Tyrant, entre otros. Luego, continuamos conduciendo hacia Chiclayo, haciendo una parada en el área de Rafán, que es propicia para el cortador de plantas peruano, y también visitamos Puerto Eten para observar al charrán peruano, la gaviota reidora y otras aves marinas.",
+
+      "ubication-0": "Hotel La joya-leymebamba",
+      "ubication-1": "Hotel La joya-leymebamba.",
+      "ubication-2": "Hotel Villa Madrid-Celendin.",
+      "ubication-3": "Hotel El Mirador-cajamarca.",
+      "ubication-4": "Hotel Santa Maria-Huamachuco.",
+      "ubication-5": "Hotel Due-Trujillo.",
+      "ubication-6": "Inti Hotel-chiclayo."
     }
   }
 }
