@@ -1,46 +1,13 @@
-<section class="video-ctn">
-  <iframe
-    class="video"
+<section class="w-full max-w-[956px] m-auto mt-20 px-10 lg:px-0" id="multimedia">
+  <h1 class="text-center text-5xl mb-9">Multimedia</h1>
+  <div class="relative pt-[56.25%]">
+    <iframe
+    class="absolute inset-0 w-full h-full  rounded-xl overflow-hidden  shadow-xl"
     src="https://www.youtube.com/embed/cuVvEl1qJds?si=Svj9PceAd2fJNy7k?controls=0&autoplay=0"
     title="YouTube video player"
     loading="lazy"
     frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen></iframe>
+  </div>
 </section>
-
-<style>
-  .video-ctn {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    margin-top: 75px;
-  }
-
-  .video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .video-ctn {
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      height: calc((900px * 9) / 16);
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .video {
-      position: relative;
-      width: 900px;
-      height: 100%;
-    }
-  }
-</style>

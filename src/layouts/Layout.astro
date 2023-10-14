@@ -6,6 +6,8 @@ import { HeadHrefLangs } from "astro-i18next/components";
 import { ViewTransitions } from "astro:transitions";
 import '@fontsource-variable/outfit';
 
+// console.log('i18next.languages', i18next.languages);;
+
 interface Props {
   title: string;
 }
@@ -16,10 +18,11 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang={i18next.language}>
   <head>
+    <!-- <meta http-equiv="refresh" content="0;url=/" /> -->
     <meta charset="UTF-8" />
     <meta name="description" content="Descubre que ofrecemos" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" hreflang="es" href="https://www.example.com/" />
     <link rel="alternate" hreflang="en" href="https://www.example.com/en/" />
@@ -41,7 +44,8 @@ const { title } = Astro.props;
         margin: 0;
         padding: 0;
         /* font-size: 62.5%; */
-        font-size: 10px;
+        /* font-size: 10px; */
+        font-size: 16px;
         scroll-behavior: smooth;
         scroll-padding-top: 92px;
       }

@@ -1,15 +1,15 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
-import image from "../../images/tour_white.jpg";
-import CardItinerary from "../../components/tour/CardItinerary.astro";
+import Layout from "../../../layouts/Layout.astro";
+import image from "../../../images/tour_yellow.jpg";
+import CardItinerary from "../../../components/tour/CardItinerary.astro";
 import { t, changeLanguage } from "i18next";
 
-changeLanguage("es");
+changeLanguage("en");
 
 const DAY = t(`tours.day`);
-const TITLE = t(`tours.white.title`);
-const arrayItinerary = new Array(5).fill("");
+const TITLE = t(`tours.yellow.title`);
+const arrayItinerary = new Array(7).fill("");
 ---
 
 <Layout title="Welcome to Astro.">
@@ -20,13 +20,13 @@ const arrayItinerary = new Array(5).fill("");
           <Image
             class="w-full h-full object-cover brightness-50 rounded-md shadow-lg md:max-w-[500px] md:min-w-[500px] md:mr-4"
             src={image}
-            alt="Tour white"
+            alt="Tour yellow"
           />
 
           <h1
-            class="absolute z-10 text-3xl text-slate-50 text-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 md:text-4xl"
+            class="absolute z-10 text-3xl text-slate-50 text-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 md:text-3xl"
           >
-            White-Masked Antbird
+            Yellow Faced Parrotlet-Purple Backed Sunbean
           </h1>
         </div>
 
@@ -50,8 +50,8 @@ const arrayItinerary = new Array(5).fill("");
           arrayItinerary.map((_, index) => (
             <CardItinerary
               title={DAY + " " + index}
-              info={t(`tours.white.info-${index}`)}
-              ubication={t(`tours.white.ubication-${index}`)}
+              info={t(`tours.yellow.info-${index}`)}
+              ubication={t(`tours.yellow.ubication-${index}`)}
             />
           ))
         }

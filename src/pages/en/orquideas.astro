@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 
-changeLanguage("es");
+changeLanguage("en");
 
-const images = await Astro.glob("../images/gallery/birds/*").then((files) => {
+const images = await Astro.glob("../../images/gallery/orquides/*").then((files) => {
     const images = files.map((file) => {
         const src = file.default.src;
         const parts = src.split("/");
@@ -23,8 +23,8 @@ const images = await Astro.glob("../images/gallery/birds/*").then((files) => {
 
 <Layout title="Welcome to Astro.">
   <div class="gallery-ctn">
-    <h1 class="gallery-bird-title">Galería de Aves</h1>
-    <div class="gallery-bird-ctn">
+    <h1 class="gallery-orquides-title">Galería de Orquídeas</h1>
+    <div class="gallery-orquides-ctn">
       {
         images.map((image) => (
           <div class="gallery-img-ctn">
@@ -57,11 +57,11 @@ const images = await Astro.glob("../images/gallery/birds/*").then((files) => {
     gap: 36px;
   }
 
-  .gallery-bird-title {
+  .gallery-orquides-title {
     font-size: 4.5rem;
   }
 
-  .gallery-bird-ctn {
+  .gallery-orquides-ctn {
     display: flex;
     flex-wrap: wrap;
     width: 90%;

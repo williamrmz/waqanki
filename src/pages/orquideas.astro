@@ -3,23 +3,22 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 
-const images = await Astro.glob("../images/gallery/orquides/*").then((files) => {
-  const images = files.map((file) => {
-    const src = file.default.src;
-    const parts = src.split("/");
-    const filename = parts[parts.length - 1];
-    const nameWithoutExtension = filename.split(".")[0];
-    const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
-    return {
-      ...file.default,
-      name: nameWithSpaces,
-    };
-  });
-
-  return images;
-});
-
 changeLanguage("es");
+
+const images = await Astro.glob("../images/gallery/orquides/*").then((files) => {
+    const images = files.map((file) => {
+        const src = file.default.src;
+        const parts = src.split("/");
+        const filename = parts[parts.length - 1];
+        const nameWithoutExtension = filename.split(".")[0];
+        const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
+        return {
+            ...file.default,
+            name: nameWithSpaces,
+        };
+    });
+    return images;
+});
 ---
 
 <Layout title="Welcome to Astro.">

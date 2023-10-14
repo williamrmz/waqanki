@@ -1,5 +1,18 @@
 ---
 import Swiper from "./Swiper.astro";
+// import Slider from "./Slider.astro";
+import { t } from "i18next";
+import background1 from "../../../images/services/service-1.jpg";
+import background2 from "../../../images/services/service-2.jpg";
+import background3 from "../../../images/services/service-3.jpg";
+import background4 from "../../../images/services/service-4.jpg";
+import background5 from "../../../images/services/service-5.jpg";
+import background6 from "../../../images/services/service-6.jpg";
+import { Image } from "astro:assets";
+
+const getTitle = (index: number) => t(`home.services.service-${index}.title`);
+const getDesc = (index: number) =>
+  t(`home.services.service-${index}.description`);
 ---
 
 <section class="services-ctn" id="services">
@@ -7,9 +20,93 @@ import Swiper from "./Swiper.astro";
   <button class="services-prices-button"
     >Horarios de atención y precios 💵</button
   >
-  <!-- <div class="services-cards-slider"> -->
-    <Swiper />
-  <!-- </div> -->
+  <div
+    class="flex flex-col w-full items-center gap-24 brightness-75 lg:max-w-[956px]"
+  >
+    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(1)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(1)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background1}
+        alt="xdsdsa"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(2)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(2)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background2}
+        alt="xdsdsa"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(3)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(3)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background3}
+        alt="xdsdsa"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(4)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(4)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background4}
+        alt="xdsdsa"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(5)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(5)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background5}
+        alt="xdsdsa"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
+      <div class="flex flex-col">
+        <h3 class="text-3xl text-center mb-6">{getTitle(6)}</h3>
+        <p class="text-xl flex justify-center items-center lg:px-8">
+          {getDesc(6)}
+        </p>
+      </div>
+      <Image
+        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+        src={background6}
+        alt="xdsdsa"
+      />
+    </div>
+  </div>
 </section>
 
 <style>
@@ -26,7 +123,7 @@ import Swiper from "./Swiper.astro";
 
   .services-title {
     color: #13260f;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     line-height: 100%;
   }
@@ -37,7 +134,7 @@ import Swiper from "./Swiper.astro";
     border: 2px solid #13260f;
     color: #13260f;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1rem;
     padding: 0.5em 0.75em;
     text-decoration: none;
     user-select: none;

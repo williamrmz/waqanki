@@ -25,27 +25,24 @@ import Card from "./Card.astro";
     row-gap: 24px;
     padding: 0 36px;
     align-items: center;
+    
   }
 
   .tours-title {
     color: #f2f2f2;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
   }
 
   .tours-cards-ctn {
     display: flex;
     flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 956px;
     row-gap: 24px;
   }
 
-  
-  @media (min-width: 1136px) {
-    .tours-cards-ctn {
-      width: 880px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
+
 </style>

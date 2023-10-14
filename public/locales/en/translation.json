@@ -1,4 +1,10 @@
 {
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "bookings": "Bookings",
+    "gallery": "Gallery"
+  },
   "home": {
     "header": {
       "button": "Discover us!",

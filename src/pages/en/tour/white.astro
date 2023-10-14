@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
-import image from "../../images/tour_white.jpg";
-import CardItinerary from "../../components/tour/CardItinerary.astro";
+import Layout from "../../../layouts/Layout.astro";
+import image from "../../../images/tour_white.jpg";
+import CardItinerary from "../../../components/tour/CardItinerary.astro";
 import { t, changeLanguage } from "i18next";
 
-changeLanguage("es");
+changeLanguage("en");
 
 const DAY = t(`tours.day`);
 const TITLE = t(`tours.white.title`);

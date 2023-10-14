@@ -2,12 +2,17 @@
 import { Image } from "astro:assets";
 import logo from "../../images/logo_white.png";
 import { LanguageSelector } from "astro-i18next/components";
+// import { localizePath } from "astro-i18next";
 import Eeuu from "../sources/Eeuu.astro";
 import Spain from "../sources/Spain.astro";
 import i18next from "i18next";
+import { t } from "i18next";
 
 const currentLanguage = i18next.language;
-// console.log('currentLanguage', currentLanguage);
+const HOME = t("nav.home");
+const SERVICES = t("nav.services");
+const BOOKINGS = t("nav.bookings");
+const GALLERY = t("nav.gallery");
 ---
 
 <script>
@@ -38,11 +43,12 @@ const currentLanguage = i18next.language;
     <span class="nav-burger"></span>
   </button>
   <nav class="nav-list">
-    <a class="nav-link" href="#header">Inicio</a>
-    <a class="nav-link" href="#services">Servicios</a>
-    <a class="nav-link" href="#reserves">Reservas</a>
-    <a class="nav-link" href="#gallery">Galería</a>
-    <a class="nav-link" href="#tours">Tours</a>
+    <a class="nav-link" href="/#header">{HOME}</a>
+    <a class="nav-link" href="/#services">{SERVICES}</a>
+    <a class="nav-link" href="/#multimedia">Multimedia</a>
+    <a class="nav-link" href="/#reserves">{BOOKINGS}</a>
+    <a class="nav-link" href="/#gallery">{GALLERY}</a>
+    <a class="nav-link" href="/#tours">Tours</a>
     <div class="nav-select-ctn">
       {currentLanguage === 'es' ? <Spain /> : <Eeuu /> }
       <LanguageSelector showFlag={false} class="nav-select" />
@@ -73,7 +79,7 @@ const currentLanguage = i18next.language;
     color: transparent;
     display: flex;
     flex-direction: column;
-    font-size: 1.75rem;
+    font-size: 1rem;
     gap: 16px;
     grid-area: list;
     justify-content: center;
@@ -143,9 +149,9 @@ const currentLanguage = i18next.language;
   }
 
   .nav-select {
-    font-size: 1.55rem;
-    border-radius: 1rem;
-    padding: 0.25rem;
+    font-size: 0.95rem;
+    border-radius: 0.6rem;
+    padding: 2.5px;
     outline: none;
     color: black;
   }

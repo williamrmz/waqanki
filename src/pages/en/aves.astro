@@ -1,11 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 
-changeLanguage("es");
+changeLanguage("en");
 
-const images = await Astro.glob("../images/gallery/birds/*").then((files) => {
+const images = await Astro.glob("../../images/gallery/birds/*").then((files) => {
     const images = files.map((file) => {
         const src = file.default.src;
         const parts = src.split("/");

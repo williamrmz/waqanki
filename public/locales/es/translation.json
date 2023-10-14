@@ -1,4 +1,10 @@
 {
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "bookings": "Reservas",
+    "gallery": "Galería"
+  },
   "home": {
     "header": {
       "button": "Descúbrenos!",
@@ -52,7 +58,7 @@
   "tours": {
     "day": "Día",
     "main": {
-      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, incluyendo bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nEl cliente tiene la flexibilidad de elegir la región que le gustaría explorar o las especies de aves que desea avistar o fotografiar.\n\nNuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario que abarca un mínimo de 5 días para garantizar una experiencia enriquecedora.",
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, incluyendo bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\nEl cliente tiene la flexibilidad de elegir la región que le gustaría explorar o las especies de aves que desea avistar o fotografiar.\nNuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario que abarca un mínimo de 5 días para garantizar una experiencia enriquecedora.",
 
       "info-0": "Llegada en 1 hora y 20 minutos a Tarapoto desde el aeropuerto de Lima. Te recogeremos en el aeropuerto y te trasladaremos al hotel.",
       "info-1": "Pasaremos toda la mañana en Aconabikh, que es una reserva privada a 40 minutos en coche desde Tarapoto. Esta reserva cuenta con comederos para colibríes, donde podrás observar especies como el ermitaño de Koepcke, Jeulfront de Gould y muchas otras. También realizaremos senderos en busca de saltamontes de cabeza dorada en un lek, así como la observación de aves como el plumaje blanco hormiguero. Luego, nos trasladaremos a Moyobamba con una parada en la carretera principal para ver los guácharos.",
@@ -89,7 +95,7 @@
       "ubication-15": "Transfer to the Airport in Chiclayo."
     },
     "scarlet": {
-      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
       "info-0": "Llegamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Los recogeremos en el aeropuerto y los trasladaremos a Unidad Bellavista, lo cual tomará aproximadamente 1 hora y 50 minutos.",
       "info-1": "Comenzamos alrededor de las 6:00 a.m. tomando un vehículo 4x4 y nos dirigimos a la plataforma. El viaje dura aproximadamente 6 horas, con algunas paradas en el camino para observar aves como el pewe atrasado y la piha de cola gris. Nuestra prioridad es encontrar el barbet con bandas escarlatas, que buscaremos por la tarde. El alojamiento es básico, con habitaciones confortables pero sin baños privados ni agua caliente. Por la noche, también podemos buscar lechuza vermiculada, lechuza rufescente y lechuza panza.",
       "info-2": "Pasaremos todo el día buscando las especies endémicas de la zona y otras aves registradas, como el tucán de punta castaña, el frutero de pecho escarlata y escamoso, el trepador de Duida, el piha de cola gris, el periquito de frente rosa, el piedemonte schiffornis, el Spadebill, el Yellow-cheeked Becard, el Andean Laniesoma, el Roraiman Flycatcher, el Jet, el Yungas y el Blue-ripped Manakin, así como una nueva especie de hormiguero que fue descubierta recientemente.",
@@ -103,7 +109,7 @@
       "ubication-4": "Airport."
     },
     "white": {
-      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 4 días para garantizar una experiencia enriquecedora.",
       "info-0": "Llegamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Nos recogerán en el aeropuerto y nos trasladarán a Yurimaguas, lo que tomará aproximadamente 2 horas y 30 minutos. Debemos llegar a Yurimaguas para tomar el vuelo al día siguiente.",
       "info-1": "Tomamos un vuelo corto de Yurimaguas a San Lorenzo, un avión pequeño con capacidad para 5 personas. El vuelo tuvo una duración de aproximadamente 30 minutos y comenzó alrededor de las 8 a.m. desde Yurimaguas. Una vez en San Lorenzo, nos dirigimos al hotel y pasamos el resto del día en el área de observación de aves, que se encuentra a 30 minutos en mototaxi local desde el hotel. Buscamos especies como el hormiguero de máscara blanca, la cotinga roja de cuello negro, el tinamú garganta blanca, el tinamú jaspeado y el bartlett's, entre otros.",
       "info-2": "Por la mañana completa, exploramos la zona del hormiguero enmascarado en busca de todas las especialidades que necesitamos encontrar. Después del almuerzo, nos enfocamos en la búsqueda de otras aves especiales, como el crake de banda negra, el halcón del bosque de Buckley, el camino de púas de cola pálida, el jacamar Paraíso y muchas más.",
@@ -117,7 +123,7 @@
       "ubication-4": "Airport."
     },
     "yellow": {
-      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\n\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 6 días para garantizar una experiencia enriquecedora.",
+      "title": "Este itinerario abarca una amplia variedad de ecosistemas en la Amazonía y áreas bajas a lo largo del río Marañón, que incluyen bosques tropicales, bosques nublados, bosques secos en las zonas altas y costeras del Perú, entre otros.\nOfrecemos a nuestros clientes la flexibilidad de elegir la región que desean explorar o las especies de aves que desean avistar o fotografiar. Nuestro equipo se encargará de organizar su viaje de la mejor manera posible, con un itinerario de al menos 6 días para garantizar una experiencia enriquecedora.",
       "info-0": "Arribamos a Tarapoto desde el aeropuerto de Lima en 1 hora y 20 minutos. Nos recogieron en el aeropuerto y nos trasladaron al hotel.",
       "info-1": "Exploramos los bosques en el valle de Atuen en busca de especies como el tucán de montaña de pecho gris, el cacique de montaña del norte, la tangara de capucha roja, el cazador de árboles de garganta de búfalo o de espalda rufa, entre otros. Observamos buenas bandadas de aves en esta área. Por la tarde, nos trasladamos a Abra Barro Negro para buscar aves como la Cola blanda de manto rojizo, la Cola de cardo de mentón blanco, la Cola de metal cobrizo, el Tapaculo negruzco y otras especies.",
       "info-2": "Comenzamos en la parte baja del valle del Marañón, donde buscamos la cotorra cara amarilla y la paloma peruana. Continuamos hasta la Hacienda El Limón, donde tenemos la oportunidad de avistar aves muy especiales, como el pinzón inca de brida buff, el pinzón inca de alas grises, el espino castaño y el zorzal de Marañón. Luego continuamos hacia Celendín.",
