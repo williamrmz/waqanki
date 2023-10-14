@@ -1,14 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../images/logo_white.png";
-import { LanguageSelector } from "astro-i18next/components";
-// import { localizePath } from "astro-i18next";
 import Eeuu from "../sources/Eeuu.astro";
 import Spain from "../sources/Spain.astro";
-import i18next from "i18next";
-import { t } from "i18next";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-const currentLanguage = i18next.language;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const HOME = t("nav.home");
 const SERVICES = t("nav.services");
 const BOOKINGS = t("nav.bookings");
@@ -16,26 +14,35 @@ const GALLERY = t("nav.gallery");
 ---
 
 <script>
-  const button = document.querySelector<HTMLElement>(".nav-button");
-  const list = document.querySelector<HTMLElement>(".nav-list");
-  const links: any = document.querySelectorAll<HTMLElement>(".nav-link");
-  if (button) {
-    button.onclick = () => {
-      list?.classList.toggle("nav-list-active");
-    };
-  }
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const button = document.querySelector<HTMLElement>(".nav-button");
+      const list = document.querySelector<HTMLElement>(".nav-list");
+      const links: any = document.querySelectorAll<HTMLElement>(".nav-link");
 
-  if (links) {
-    links.forEach(
-      (link: any) =>
-        (link.onclick = () => {
+      if (button) {
+        button.onclick = () => {
           list?.classList.toggle("nav-list-active");
-        })
-    );
-  }
+        };
+      }
+
+      if (links) {
+        links.forEach(
+          (link: any) =>
+            (link.onclick = () => {
+              list?.classList.toggle("nav-list-active");
+            })
+        );
+      }
+    },
+    { once: false }
+  );
 </script>
 
-<nav class="fixed box-border grid items-center justify-between w-full z-50 nav-ctn">
+<nav
+  class="fixed box-border grid items-center justify-between w-full z-50 nav-ctn"
+>
   <a class="nav-link" href="/">
     <Image class="nav-logo" src={logo} alt="Logo Waqanki" />
   </a>
@@ -50,8 +57,9 @@ const GALLERY = t("nav.gallery");
     <a class="nav-link" href="/#gallery">{GALLERY}</a>
     <a class="nav-link" href="/#tours">Tours</a>
     <div class="nav-select-ctn">
-      {currentLanguage === 'es' ? <Spain /> : <Eeuu /> }
-      <LanguageSelector showFlag={false} class="nav-select" />
+      {lang === "es" ? <Spain /> : <Eeuu />}
+      <a class=`${lang === "es" ? 'font-bold' : ''}` href="/">Español</a>
+      <a class=`${lang === "en" ? 'font-bold' : ''}` href="/en/">English</a>
     </div>
   </nav>
 </nav>

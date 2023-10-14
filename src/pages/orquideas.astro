@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
-
-changeLanguage("es");
 
 const images = await Astro.glob("../images/gallery/orquides/*").then((files) => {
     const images = files.map((file) => {

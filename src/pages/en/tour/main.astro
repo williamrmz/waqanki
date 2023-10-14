@@ -3,16 +3,20 @@ import { Image } from "astro:assets";
 import Layout from "../../../layouts/Layout.astro";
 import image from "../../../images/tour_main.jpg";
 import CardItinerary from "../../../components/tour/CardItinerary.astro";
-import { t, changeLanguage } from "i18next";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
-changeLanguage("en");
-
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const arrayItinerary = new Array(16).fill("");
 const DAY = t(`tours.day`);
 const TITLE = t(`tours.main.title`);
-const arrayItinerary = new Array(16).fill("");
+//@ts-ignore
+const getInfo = (index) => t(`tours.main.info-${index}`);
+//@ts-ignore
+const getUbi = (index) => t(`tours.main.ubication-${index}`);
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Welcome to Astro." transition:animate="none">
   <div class="w-full bg-white pb-16 pt-24">
     <div class="w-full flex">
       <div class="w-full px-6 md:max-w-[956px] md:mx-auto">
@@ -21,6 +25,7 @@ const arrayItinerary = new Array(16).fill("");
             class="w-full h-full object-cover brightness-50 rounded-md shadow-lg md:max-w-[500px] md:min-w-[500px] md:mr-4"
             src={image}
             alt="Tour main"
+            transition:name="tour-main"
           />
 
           <h1
@@ -50,8 +55,8 @@ const arrayItinerary = new Array(16).fill("");
           arrayItinerary.map((_, index) => (
             <CardItinerary
               title={DAY + " " + index}
-              info={t(`tours.main.info-${index}`)}
-              ubication={t(`tours.main.ubication-${index}`)}
+              info={getInfo(index)}
+              ubication={getUbi(index)}
             />
           ))
         }

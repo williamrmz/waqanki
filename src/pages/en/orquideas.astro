@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
-
-changeLanguage("en");
 
 const images = await Astro.glob("../../images/gallery/orquides/*").then((files) => {
     const images = files.map((file) => {
@@ -58,7 +55,7 @@ const images = await Astro.glob("../../images/gallery/orquides/*").then((files) 
   }
 
   .gallery-orquides-title {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
 
   .gallery-orquides-ctn {
@@ -79,7 +76,7 @@ const images = await Astro.glob("../../images/gallery/orquides/*").then((files) 
 
   .gallery-img-title {
     color: #eee;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .gallery-img {

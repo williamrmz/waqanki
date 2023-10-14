@@ -1,18 +1,19 @@
 ---
-import Swiper from "./Swiper.astro";
-// import Slider from "./Slider.astro";
-import { t } from "i18next";
+import { Image } from "astro:assets";
 import background1 from "../../../images/services/service-1.jpg";
 import background2 from "../../../images/services/service-2.jpg";
 import background3 from "../../../images/services/service-3.jpg";
 import background4 from "../../../images/services/service-4.jpg";
 import background5 from "../../../images/services/service-5.jpg";
 import background6 from "../../../images/services/service-6.jpg";
-import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const getTitle = (index: number) => t(`home.services.service-${index}.title`);
-const getDesc = (index: number) =>
-  t(`home.services.service-${index}.description`);
+//@ts-ignore
+const getTitle = (index) => t(`home.services.service-${index}.title`);
+//@ts-ignore
+const getDesc = (index) => t(`home.services.service-${index}.description`);
 ---
 
 <section class="services-ctn" id="services">
@@ -25,9 +26,9 @@ const getDesc = (index: number) =>
   >
     <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(1)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("1")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(1)}
+          {getDesc("1")}
         </p>
       </div>
       <Image
@@ -39,9 +40,9 @@ const getDesc = (index: number) =>
 
     <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(2)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("2")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(2)}
+          {getDesc("2")}
         </p>
       </div>
       <Image
@@ -53,9 +54,9 @@ const getDesc = (index: number) =>
 
     <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(3)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("3")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(3)}
+          {getDesc("3")}
         </p>
       </div>
       <Image
@@ -67,9 +68,9 @@ const getDesc = (index: number) =>
 
     <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(4)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("4")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(4)}
+          {getDesc("4")}
         </p>
       </div>
       <Image
@@ -81,9 +82,9 @@ const getDesc = (index: number) =>
 
     <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(5)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("5")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(5)}
+          {getDesc("5")}
         </p>
       </div>
       <Image
@@ -95,9 +96,9 @@ const getDesc = (index: number) =>
 
     <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
       <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle(6)}</h3>
+        <h3 class="text-3xl text-center mb-6">{getTitle("6")}</h3>
         <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc(6)}
+          {getDesc("6")}
         </p>
       </div>
       <Image

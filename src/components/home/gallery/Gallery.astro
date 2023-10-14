@@ -4,6 +4,10 @@ import bird from "../../../images/gallery_bird.jpg";
 import orquide from "../../../images/gallery_orquide.jpg";
 import ebird from "../../../images/ebird.jpg";
 import arrowRight from "../../../images/arrow_right.svg";
+
+import { getLangFromUrl, useTranslatedPath } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <section class="gallery-ctn" id="gallery">
@@ -11,7 +15,7 @@ import arrowRight from "../../../images/arrow_right.svg";
 
   <div class="flex flex-col max-w-[956px] gap-8 lg:flex-row">
     <div class="gallery-card">
-      <Image class="gallery-card-img" src={orquide} alt="orquide gallery" />
+      <Image class="gallery-card-img" src={orquide} alt="orquide gallery" transition:name="gallery-orquide" />
       <div class="gallery-card-info">
         <h3 class="gallery-card-info-title">Orquídeas</h3>
         <p class="gallery-card-info-desc">
@@ -19,7 +23,7 @@ import arrowRight from "../../../images/arrow_right.svg";
           de más de 250 especies de orquídeas y otras plantas ornamentales de la
           Amazonia Peruana.
         </p>
-        <a class="gallery-button" href="/orchids"
+        <a class="gallery-button" href={translatePath('/orquideas')}
           >Ver galería de orquídeas
           <Image
             class="gallery-button-icon"
@@ -37,7 +41,7 @@ import arrowRight from "../../../images/arrow_right.svg";
           amantes de la naturaleza un inolvidable encuentro con este fascinante
           mundo.
         </p>
-        <a class="gallery-button" href="/birds"
+        <a class="gallery-button" href={translatePath('/aves/')}
           >Ver galería de aves
           <Image
             class="gallery-button-icon"
@@ -50,7 +54,7 @@ import arrowRight from "../../../images/arrow_right.svg";
           href="https://ebird.org/home"
           target="_blank"
         >
-          <Image class="gallery-button-img" src={ebird} alt="ebird" />
+          <Image class="gallery-button-img" src={ebird} alt="ebird"  transition:name="gallery-bird"/>
         </a>
       </div>
       <Image class="gallery-card-img" src={bird} alt="bird gallery" />

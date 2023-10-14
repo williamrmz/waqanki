@@ -1,18 +1,21 @@
 ---
 import { Image } from "astro:assets";
-
-interface Props {
-  title: string;
-  src: ImageMetadata;
-  route: string;
-  index: string
-}
-const { title, src, route, index } = Astro.props;
 import arrowRight from "../../../images/arrow_right.svg";
+import { getLangFromUrl, useTranslatedPath } from "../../../i18n/utils";
+interface Props {
+  index: string;
+  name: string;
+  route: string;
+  src: ImageMetadata;
+  title: string;
+}
+const { title, src, route, index, name } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 ---
 
-<a href={route} class="tours-card">
-  <Image class={`tours-image tours-image-${index}`} src={src} alt="Tour main" />
+<a href={translatePath(route)} class="tours-card">
+  <Image class={`tours-image tours-image-${index}`} src={src} alt={title} transition:name={name}/>
   <div class="tours-text-link">
     <p>{title}</p>
     <div class="tours-icon-ctn">

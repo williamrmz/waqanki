@@ -3,13 +3,17 @@ import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 import image from "../../images/tour_white.jpg";
 import CardItinerary from "../../components/tour/CardItinerary.astro";
-import { t, changeLanguage } from "i18next";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-changeLanguage("es");
-
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const arrayItinerary = new Array(16).fill("");
 const DAY = t(`tours.day`);
 const TITLE = t(`tours.white.title`);
-const arrayItinerary = new Array(5).fill("");
+//@ts-ignore
+const getInfo = (index) => t(`tours.white.info-${index}`);
+//@ts-ignore
+const getUbi = (index) => t(`tours.white.ubication-${index}`);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,6 +25,7 @@ const arrayItinerary = new Array(5).fill("");
             class="w-full h-full object-cover brightness-50 rounded-md shadow-lg md:max-w-[500px] md:min-w-[500px] md:mr-4"
             src={image}
             alt="Tour white"
+            transition:name="tour-white"
           />
 
           <h1
@@ -50,8 +55,8 @@ const arrayItinerary = new Array(5).fill("");
           arrayItinerary.map((_, index) => (
             <CardItinerary
               title={DAY + " " + index}
-              info={t(`tours.white.info-${index}`)}
-              ubication={t(`tours.white.ubication-${index}`)}
+              info={getInfo(index)}
+              ubication={getUbi(index)}
             />
           ))
         }

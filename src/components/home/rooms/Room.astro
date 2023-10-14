@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { t } from "i18next";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 interface Props {
   cardIndex: string;
@@ -9,6 +11,7 @@ interface Props {
 }
 const { cardIndex, src, price } = Astro.props;
 
+//@ts-ignore
 const ROOM_TEXT = t(`home.rooms.room-${cardIndex}`);
 ---
 

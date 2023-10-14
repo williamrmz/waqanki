@@ -1,12 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import background from "../../../images/background_home.png";
-import { t } from "i18next";
 import Modal from "../../Modal.astro";
 import Wave from "./Wave.astro";
 import Open from "../../sources/Open.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
-const butontext = t("home.header.button");
+const BUTTON_TEXT = t("home.header.button");
 ---
 
 <script>
@@ -44,7 +46,7 @@ const butontext = t("home.header.button");
       Descubre un oasis de orquídeas y aves en el Alto Mayo. Más de 250 especies
       de orquídeas y 400 especies de aves te esperan.
     </p>
-    <button class="header-button">{butontext} <Open /></button>
+    <button class="header-button">{BUTTON_TEXT} <Open /></button>
   </div>
   <Wave opacity=".5" position="header-wave-first" />
   <Wave opacity=".5" position="header-wave-second" />

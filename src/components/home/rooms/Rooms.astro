@@ -2,7 +2,10 @@
 import Form from "./Form.astro";
 import Swiper from "./SwiperRoom.astro";
 
-import { t } from "i18next";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 
 const ROOM_1_TEXT = t("home.rooms.room-1");
 const ROOM_2_TEXT = t("home.rooms.room-2");

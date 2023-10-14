@@ -1,24 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
 
-changeLanguage("en");
-
-const images = await Astro.glob("../../images/gallery/birds/*").then((files) => {
+const images = await Astro.glob("../../images/gallery/birds/*").then(
+  (files) => {
     const images = files.map((file) => {
-        const src = file.default.src;
-        const parts = src.split("/");
-        const filename = parts[parts.length - 1];
-        const nameWithoutExtension = filename.split(".")[0];
-        const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
-        return {
-            ...file.default,
-            name: nameWithSpaces,
-        };
+      const src = file.default.src;
+      const parts = src.split("/");
+      const filename = parts[parts.length - 1];
+      const nameWithoutExtension = filename.split(".")[0];
+      const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
+      return {
+        ...file.default,
+        name: nameWithSpaces,
+      };
     });
     return images;
-});
+  }
+);
 ---
 
 <Layout title="Welcome to Astro.">
@@ -26,17 +25,29 @@ const images = await Astro.glob("../../images/gallery/birds/*").then((files) => 
     <h1 class="gallery-bird-title">Galería de Aves</h1>
     <div class="gallery-bird-ctn">
       {
-        images.map((image) => (
+        images.map((image, index) => (
           <div class="gallery-img-ctn">
             <h3 class="gallery-img-title">{image.name}</h3>
-            <Image
-              class="gallery-img"
-              src={image}
-              alt={image.name}
-              loading="lazy"
-              width="480"
-              height="300"
-            />
+            {index === 0 ? (
+              <Image
+                class="gallery-img"
+                src={image}
+                alt={image.name}
+                loading="lazy"
+                width="480"
+                height="300"
+                transition:name="gallery-bird"
+              />
+            ) : (
+              <Image
+                class="gallery-img"
+                src={image}
+                alt={image.name}
+                loading="lazy"
+                width="480"
+                height="300"
+              />
+            )}
           </div>
         ))
       }
@@ -58,7 +69,7 @@ const images = await Astro.glob("../../images/gallery/birds/*").then((files) => 
   }
 
   .gallery-bird-title {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
 
   .gallery-bird-ctn {
@@ -79,7 +90,7 @@ const images = await Astro.glob("../../images/gallery/birds/*").then((files) => 
 
   .gallery-img-title {
     color: #eee;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .gallery-img {
