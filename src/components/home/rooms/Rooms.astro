@@ -7,6 +7,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 
+const TITLE_TEXT = t("home.rooms.title");
+
 const ROOM_1_TEXT = t("home.rooms.room-1");
 const ROOM_2_TEXT = t("home.rooms.room-2");
 const ROOM_3_TEXT = t("home.rooms.room-3");
@@ -18,7 +20,7 @@ const OPTION_4_TEXT = t("home.rooms.options.opt-4");
 ---
 
 <section class="rooms-ctn" id="reserves">
-  <h2 class="rooms-title">Nuestras Habitaciones</h2>
+  <h2 class="rooms-title">{TITLE_TEXT}</h2>
   <div class="rooms-cards-slider">
     <Swiper />
     <div class="rooms-info-ctn">

@@ -3,10 +3,12 @@ import { Image } from "astro:assets";
 import logo from "../../images/logo_white.png";
 import Eeuu from "../sources/Eeuu.astro";
 import Spain from "../sources/Spain.astro";
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 const t = useTranslations(lang);
+
 const HOME = t("nav.home");
 const SERVICES = t("nav.services");
 const BOOKINGS = t("nav.bookings");
@@ -14,186 +16,71 @@ const GALLERY = t("nav.gallery");
 ---
 
 <script>
-  document.addEventListener(
-    "astro:page-load",
-    () => {
-      const button = document.querySelector<HTMLElement>(".nav-button");
-      const list = document.querySelector<HTMLElement>(".nav-list");
-      const links: any = document.querySelectorAll<HTMLElement>(".nav-link");
+	document.addEventListener(
+		"astro:page-load",
+		() => {
+			const hamburgerCheckbox = document.getElementById("hamburger") as HTMLInputElement;
+			const menuLinks = document.querySelectorAll("a");
 
-      if (button) {
-        button.onclick = () => {
-          list?.classList.toggle("nav-list-active");
-        };
-      }
-
-      if (links) {
-        links.forEach(
-          (link: any) =>
-            (link.onclick = () => {
-              list?.classList.toggle("nav-list-active");
-            })
-        );
-      }
-    },
-    { once: false }
-  );
+			menuLinks.forEach((link) => {
+				link.addEventListener("click", () => {
+					hamburgerCheckbox.checked = false;
+				});
+			});
+		},
+		{ once: false }
+	);
 </script>
 
 <nav
-  class="fixed box-border grid items-center justify-between w-full z-50 nav-ctn"
+	class="nav-ctn fixed z-50 box-border grid w-full grid-cols-2 items-center justify-between overflow-hidden bg-black/80 px-3 py-2 lg:flex lg:px-6 lg:py-2"
 >
-  <a class="nav-link" href="/">
-    <Image class="nav-logo" src={logo} alt="Logo Waqanki" />
-  </a>
-  <button class="nav-button">
-    <span class="nav-burger"></span>
-  </button>
-  <nav class="nav-list">
-    <a class="nav-link" href="/#header">{HOME}</a>
-    <a class="nav-link" href="/#services">{SERVICES}</a>
-    <a class="nav-link" href="/#multimedia">Multimedia</a>
-    <a class="nav-link" href="/#reserves">{BOOKINGS}</a>
-    <a class="nav-link" href="/#gallery">{GALLERY}</a>
-    <a class="nav-link" href="/#tours">Tours</a>
-    <div class="nav-select-ctn">
-      {lang === "es" ? <Spain /> : <Eeuu />}
-      <a class=`${lang === "es" ? 'font-bold' : ''}` href="/">Español</a>
-      <a class=`${lang === "en" ? 'font-bold' : ''}` href="/en/">English</a>
-    </div>
-  </nav>
+	<a class="col-span-1" href="/">
+		<Image class="h-full max-w-[130px] px-[5px]" src={logo} alt="Logo Waqanki" />
+	</a>
+
+	<input type="checkbox" name="hamburger" id="hamburger" class="peer hidden" />
+	<label
+		for="hamburger"
+		class="nav-burger col-span-1 h-[30px] w-[30px] justify-self-end bg-center bg-no-repeat align-middle lg:hidden"
+	>
+		<svg class="block h-full w-full fill-slate-50" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+			<title>Mobile menu</title>
+			<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+		</svg>
+	</label>
+
+	<div
+		class="col-span-2 flex max-h-0 w-full flex-col items-center justify-center gap-4 overflow-hidden text-base text-slate-50 peer-checked:max-h-[1000px] lg:max-h-full lg:flex-auto lg:flex-row lg:justify-end"
+	>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#header")}>{HOME}</a
+		>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#services")}>{SERVICES}</a
+		>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#multimedia")}>Multimedia</a
+		>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#reserves")}>{BOOKINGS}</a
+		>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#gallery")}>{GALLERY}</a
+		>
+		<a
+			class="bg-transparent text-inherit no-underline outline-none lg:hover:font-extrabold"
+			href={translatePath("/#tours")}>Tours</a
+		>
+		<div class="ml-4 flex items-center gap-2">
+			{lang === "es" ? <Spain /> : <Eeuu />}
+			<a class=`${lang === "es" ? 'font-extrabold' : ''}` href="/">Español</a>
+			<a class=`${lang === "en" ? 'font-extrabold' : ''}` href="/en/">English</a>
+		</div>
+	</div>
 </nav>
-
-<style>
-  .nav-ctn {
-    /* align-items: center; */
-    background-color: rgba(000, 000, 000, 0.85);
-    /* box-sizing: border-box; */
-    /* display: grid; */
-    /* justify-content: space-between; */
-    padding: 8px 12px;
-    /* position: fixed; */
-    top: 0;
-    /* width: 100%; */
-    /* z-index: 99; */
-    grid-template:
-      "logo burger" auto
-      "list list" auto;
-    overflow: hidden;
-  }
-
-  .nav-list {
-    align-items: center;
-    color: transparent;
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    gap: 16px;
-    grid-area: list;
-    justify-content: center;
-    list-style: none;
-    max-height: 0px;
-    pointer-events: none;
-  }
-
-  .nav-list-active {
-    color: #eee;
-    max-height: 1000px;
-    pointer-events: all;
-  }
-
-  .nav-link,
-  .nav-link:link,
-  .nav-link:visited,
-  .nav-link:hover,
-  .nav-link:focus,
-  .nav-link:focus-within {
-    text-decoration: none;
-    color: inherit;
-    cursor: none;
-    outline: none;
-    background-color: transparent;
-    user-select: none;
-  }
-
-  .nav-logo {
-    height: 100%;
-    max-width: 130px;
-    padding: 5px 0;
-  }
-
-  .nav-link {
-    grid-area: logo;
-  }
-
-  .nav-button {
-    border-radius: 7px;
-    height: max-content;
-    width: max-content;
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    outline: inherit;
-    padding: 4px 8px;
-    grid-area: burger;
-  }
-
-  .nav-burger {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: inline-block;
-    height: 30px;
-    vertical-align: middle;
-    width: 30px;
-  }
-
-  .nav-select-ctn {
-    display: flex;
-    gap: 8px;
-  }
-
-  .nav-select {
-    font-size: 0.95rem;
-    border-radius: 0.6rem;
-    padding: 2.5px;
-    outline: none;
-    color: black;
-  }
-
-  @media (min-width: 768px) {
-    .nav-ctn {
-      grid-template:
-        "logo list" auto
-        "burger burger" 0;
-      padding: 8px 24px;
-      /* background-color: rgba(000, 000, 000, 0.75); */
-    }
-
-    .nav-list {
-      color: #eee;
-      flex-direction: row;
-      pointer-events: all;
-    }
-
-    .nav-button {
-      display: none;
-    }
-
-    .nav-link,
-    .nav-link:link,
-    .nav-link:visited,
-    .nav-link:hover,
-    .nav-link:focus,
-    .nav-link:focus-within {
-      cursor: pointer;
-    }
-
-    .nav-select-ctn {
-      margin-left: 12px;
-    }
-  }
-</style>

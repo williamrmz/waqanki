@@ -1,18 +1,15 @@
 ---
 import Navbar from "../components/navbar/Navbar.astro";
 import Footer from "../components/footer/Footer.astro";
-// import i18next from "i18next";
-// import { HeadHrefLangs } from "astro-i18next/components";
 import { ViewTransitions } from "astro:transitions";
 import '@fontsource-variable/outfit';
 
-// console.log('i18next.languages', i18next.languages);;
-
 interface Props {
   title: string;
+  textColor: string;
 }
 
-const { title } = Astro.props;
+const { title, textColor } = Astro.props;
 
 import { getLangFromUrl } from '../i18n/utils';
 import NewNavbar from "../components/navbar/NewNavbar.astro";
@@ -31,7 +28,7 @@ const lang = getLangFromUrl(Astro.url);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" hreflang="es" href="https://www.example.com/" />
     <link rel="alternate" hreflang="en" href="https://www.example.com/en/" />
-    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+    <!-- <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script> -->
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   <!-- <meta http-equiv="refresh" content="0;url=/" /> -->
@@ -43,7 +40,7 @@ const lang = getLangFromUrl(Astro.url);
     <Navbar />
     <!-- <NewNavbar /> -->
     <slot />
-    <Footer />
+    <Footer textColor={textColor} />
    
     <style is:global>
       html,

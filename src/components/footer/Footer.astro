@@ -1,62 +1,88 @@
 ---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import { Image } from "astro:assets";
 import Location from "../sources/Location.astro";
 import Email from "../sources/Email.astro";
 import Phone from "../sources/Phone.astro";
-
 import youtube from "../../images/yt.webp";
 import facebook from "../../images/fb.webp";
 import book from "../../images/bk.webp";
+
+interface Props {
+  textColor: string;
+}
+
+const { textColor } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const CONTACT_TEXT = t(`home.footer.contact-us`);
+const SOCIAL_TEXT = t(`home.footer.social`);
+const UBICATION_TEXT = t(`home.footer.ubication`);
+const LAW_TEXT = t(`home.footer.law`);
 ---
 
-<section class="footer-ctn" id="footer">
-  <div class="footer-contact">
-    <h3 class="footer-title">Contáctanos</h3>
-    <div class="footer-info-ctn">
-      <p><Location />Carretera Baños Termales Km. 03 Moyobamba - Perú</p>
-    </div>
-    <div class="footer-info-ctn">
-      <p class="footer-info-ellipsis">
-        <Email /> reservas@waqankiecolodge.com
-      </p>
-      <p class="footer-info-ellipsis">
-        <Email /> waqankireservas@hotmail.com
-      </p>
-      <p class="footer-info-ellipsis"><Email /> birdinainmovo@amail.com</p>
-    </div>
-    <div class="footer-info-ctn">
-      <p><Phone /> +51 964 785 853</p>
-      <p><Phone /> +51 964016947</p>
-      <p><Phone /> +51 956 034 628</p>
-    </div>
-  </div>
+<section class=`relative grid items-center gap-y-6 bg-[#4d1f1d] px-9 py-0 pt-24 lg:grid-cols-3 lg:px-24 ${textColor}` id="footer">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 1440 320"
+		class="absolute left-0 top-[-1px] h-20 w-full rotate-180"
+		preserveAspectRatio="none"
+	>
+		<path
+			fill="currentColor"
+			fill-opacity="1"
+			d="M0,64L48,90.7C96,117,192,171,288,165.3C384,160,480,96,576,64C672,32,768,32,864,74.7C960,117,1056,203,1152,224C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+		></path>
+	</svg>
+	<div class="flex flex-col gap-4 lg:order-1">
+		<h3 class="text-center text-3xl text-slate-50">{CONTACT_TEXT}</h3>
+		<div class="flex w-full text-base text-slate-50 justify-center">
+			<p class="flex items-center gap-2  text-center"><Location />Carretera Baños Termales Km. 03 Moyobamba - Perú</p>
+		</div>
+		<div class="flex w-full flex-col gap-2 text-base text-slate-50 items-center">
+			<p class="flex items-center gap-2">
+				<Email /> reservas@waqankiecolodge.com
+			</p>
+			<p class="flex items-center gap-2">
+				<Email /> waqankireservas@hotmail.com
+			</p>
+			<p class="flex items-center gap-2"><Email /> birdinainmovo@amail.com</p>
+		</div>
+		<div class="flex w-full flex-col gap-2 text-base text-slate-50 items-center">
+			<p class="flex items-center gap-2"><Phone /> +51 964 785 853</p>
+			<p class="flex items-center gap-2"><Phone /> +51 964016947</p>
+			<p class="flex items-center gap-2"><Phone /> +51 956 034 628</p>
+		</div>
+	</div>
 
-  <div class="footer-network">
-    <h3 class="footer-title">Redes sociales</h3>
-    <div class="footer-networks">
-      <Image class="footer-networks-img" src={facebook} alt="Icon facebook" />
-      <Image class="footer-networks-img" src={youtube} alt="Icon youtube" />
-      <Image class="footer-networks-img" src={book} alt="Icon book" />
-    </div>
-  </div>
+	<div class="mt-6 flex w-full flex-col gap-4 lg:order-2 lg:mt-0">
+		<h3 class="text-center text-3xl text-slate-50">{SOCIAL_TEXT}</h3>
+		<div class="flex w-full justify-around lg: lg:items-center lg:justify-center lg:gap-6">
+			<Image class="h-auto w-16" src={facebook} alt="Icon facebook" />
+			<Image class="h-auto w-16" src={youtube} alt="Icon youtube" />
+			<Image class="h-auto w-16" src={book} alt="Icon book" />
+		</div>
+	</div>
 
-  <div class="footer-map">
-    <h3 class="footer-title">Ubicación mapa</h3>
-    <iframe
-      class="footer-title-map"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.186740028314!2d-76.9748769638866!3d-6.074369526224734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b73a9ccd06e39b%3A0x2696e92846e6fb49!2sOrquidario+Wakanki%2C+Moyobamba!5e0!3m2!1ses-419!2spe!4v1507416439830"
-      frameborder="0"
-      width="100%"
-      height="270"></iframe>
-  </div>
+	<div class="flex flex-col gap-4 lg:order-3">
+		<h3 class="text-center text-3xl text-slate-50">{UBICATION_TEXT}</h3>
+		<iframe
+			class="rounded-xl"
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.186740028314!2d-76.9748769638866!3d-6.074369526224734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b73a9ccd06e39b%3A0x2696e92846e6fb49!2sOrquidario+Wakanki%2C+Moyobamba!5e0!3m2!1ses-419!2spe!4v1507416439830"
+			frameborder="0"
+			width="100%"
+			height="270"></iframe>
+	</div>
 
-  <p class="footer-credits">
-    © 2017, Waqanki Ecologde Perú. Todos los derechos Reservados.
-  </p>
+	<p class="py-6 text-center text-base text-slate-100 lg:order-4 lg:col-span-3">
+		© 2017, Waqanki Ecologde Perú. {LAW_TEXT}.
+	</p>
 </section>
 
 <style>
-  .footer-ctn {
+	/* .footer-ctn {
     display: flex;
     flex-direction: column;
     background-color: #3fb54b;
@@ -64,113 +90,111 @@ import book from "../../images/bk.webp";
     padding: 0 36px;
     align-items: center;
     padding-top: 75px;
-  }
+  } */
 
-  .footer-title {
-    color: #f2f2f2;
-    font-size: 1.56rem;
-    text-align: center;
-  }
+	/* .footer-title {
+		color: #f2f2f2;
+		font-size: 1.56rem;
+		text-align: center;
+	} */
 
-  .footer-contact {
+	/* .footer-contact {
     display: flex;
     flex-direction: column;
     gap: 16px;
-  }
+  } */
 
-  .footer-info-ctn {
-    display: flex;
-    /* align-items: center; */
-    width: 100%;
-    gap: 8px;
-    font-size: 1rem;
-    color: #eee;
-    flex-direction: column;
-    /* margin-bottom: 12px; */
-  }
+	/* .footer-info-ctn {
+		display: flex;
+		width: 100%;
+		gap: 8px;
+		font-size: 1rem;
+		color: #eee;
+		flex-direction: column;
+	} */
 
-  .footer-info-ctn p {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+	/* .footer-info-ctn p {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	} */
 
-  .footer-info-ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+	/* .footer-info-ellipsis {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	} */
 
-  .footer-info-icon-ctn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+	/* .footer-info-icon-ctn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+	} */
 
-  .footer-network {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-    width: 100%;
-  }
+	/* .footer-network {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-bottom: 24px;
+		width: 100%;
+	} */
 
-  .footer-networks {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
+	/* .footer-networks {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	} */
 
-  .footer-networks-img {
-    width: 60px;
-    height: auto;
-  }
+	/* .footer-networks-img {
+		width: 60px;
+		height: auto;
+	} */
 
-  .footer-map {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+	/* .footer-map {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
 
-  .footer-title-map {
-    border-radius: 1.6em;
-  }
+	.footer-title-map {
+		border-radius: 1.6em;
+	}
 
-  .footer-credits {
-    font-size: 1rem;
-    color: #eee;
-    text-align: center;
-    padding: 24px 0;
-  }
+	.footer-credits {
+		font-size: 1rem;
+		color: #eee;
+		text-align: center;
+		padding: 24px 0;
+	} */
 
-  @media (min-width: 786px) {
-    .footer-ctn {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      column-gap: 16px;
-    }
+	@media (min-width: 786px) {
+		.footer-ctn {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+			column-gap: 16px;
+		}
 
-    .footer-network { 
-      width: auto;
-      margin: 0;
-    }
+		.footer-network {
+			width: auto;
+			margin: 0;
+		}
 
-    .footer-networks {
-      flex-direction: column;
-      align-items: center;
-      width: auto;
-      gap: 16px;
-    }
+		.footer-networks {
+			flex-direction: column;
+			align-items: center;
+			width: auto;
+			gap: 16px;
+		}
 
-    .footer-credits {
-      flex-shrink: 0;
-      flex: none;
-    }
+		.footer-credits {
+			flex-shrink: 0;
+			flex: none;
+		}
 
-    .footer-credits {
-      width: 100%;
-    }
-  }
+		.footer-credits {
+			width: 100%;
+		}
+	}
 </style>

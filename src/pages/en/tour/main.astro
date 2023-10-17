@@ -16,51 +16,43 @@ const getInfo = (index) => t(`tours.main.info-${index}`);
 const getUbi = (index) => t(`tours.main.ubication-${index}`);
 ---
 
-<Layout title="Welcome to Astro." transition:animate="none">
-  <div class="w-full bg-white pb-16 pt-24">
-    <div class="w-full flex">
-      <div class="w-full px-6 md:max-w-[956px] md:mx-auto">
-        <div class="relative float-left mb-3 md:mb-0">
-          <Image
-            class="w-full h-full object-cover brightness-50 rounded-md shadow-lg md:max-w-[500px] md:min-w-[500px] md:mr-4"
-            src={image}
-            alt="Tour main"
-            transition:name="tour-main"
-          />
+<Layout title="Tour Northen Perú" textColor="text-slate-50">
+	<div class="w-full bg-white pb-16 pt-24">
+		<div class="flex w-full">
+			<div class="w-full px-6 md:mx-auto md:max-w-[956px]">
+				<div class="relative float-left mb-3 md:mb-0">
+					<Image
+						class="h-full w-full rounded-md object-cover shadow-lg brightness-50 md:mr-4 md:min-w-[500px] md:max-w-[500px]"
+						src={image}
+						alt="Tour main"
+						transition:name="tour-main"
+					/>
 
-          <h1
-            class="absolute z-10 text-3xl text-slate-50 text-center top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 md:text-5xl"
-          >
-            Northen Perú
-          </h1>
-        </div>
+					<h1
+						class="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center text-3xl text-slate-50 md:text-5xl"
+					>
+						Northen Perú
+					</h1>
+				</div>
 
-        <p
-          class="text-neutral-900 leading-relaxed text-lg whitespace-pre-line md:px-0 md:text-xl"
-        >
-          {TITLE}
-        </p>
-      </div>
-    </div>
+				<p class="whitespace-pre-line text-lg leading-relaxed text-neutral-900 md:px-0 md:text-xl">
+					{TITLE}
+				</p>
+			</div>
+		</div>
 
-    <div
-      class="w-5/6 mx-auto d-flex justify-content-center align-items-center flex-column mt-10 md:w-2/4"
-    >
-      <ul
-        aria-label="Colored activity feed"
-        role="feed"
-        class="relative flex flex-col gap-8 pl-6 before:absolute before:top-0 before:left-6 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 after:absolute after:top-6 after:left-6 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200"
-      >
-        {
-          arrayItinerary.map((_, index) => (
-            <CardItinerary
-              title={DAY + " " + index}
-              info={getInfo(index)}
-              ubication={getUbi(index)}
-            />
-          ))
-        }
-      </ul>
-    </div>
-  </div>
+		<div class="d-flex justify-content-center align-items-center flex-column mx-auto mt-10 w-5/6 md:w-2/4">
+			<ul
+				aria-label="Colored activity feed"
+				role="feed"
+				class="relative flex flex-col gap-8 pl-6 before:absolute before:left-6 before:top-0 before:h-full before:-translate-x-1/2 before:border before:border-slate-200 after:absolute after:bottom-6 after:left-6 after:top-6 after:-translate-x-1/2 after:border after:border-slate-200"
+			>
+				{
+					arrayItinerary.map((_, index) => (
+						<CardItinerary title={DAY + " " + index} info={getInfo(index)} ubication={getUbi(index)} />
+					))
+				}
+			</ul>
+		</div>
+	</div>
 </Layout>

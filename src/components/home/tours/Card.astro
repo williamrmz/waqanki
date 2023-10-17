@@ -1,118 +1,120 @@
 ---
 import { Image } from "astro:assets";
 import arrowRight from "../../../images/arrow_right.svg";
-import { getLangFromUrl, useTranslatedPath } from "../../../i18n/utils";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../../../i18n/utils";
 interface Props {
-  index: string;
-  name: string;
-  route: string;
-  src: ImageMetadata;
-  title: string;
+	index: string;
+	name: string;
+	route: string;
+	src: ImageMetadata;
+	title: string;
 }
 const { title, src, route, index, name } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+
+const SEE_TOUR_TEXT = t(`home.tours.see-tour`);
 ---
 
 <a href={translatePath(route)} class="tours-card">
-  <Image class={`tours-image tours-image-${index}`} src={src} alt={title} transition:name={name}/>
-  <div class="tours-text-link">
-    <p>{title}</p>
-    <div class="tours-icon-ctn">
-      <p class="tour-text-see-more">Mira el tour</p>
-      <Image class="tours-text-arrow" src={arrowRight} alt="arrow right" />
-    </div>
-  </div>
+	<Image class={`tours-image tours-image-${index}`} src={src} alt={title} transition:name={name} />
+	<div class="tours-text-link">
+		<p>{title}</p>
+		<div class="tours-icon-ctn">
+			<p class="tour-text-see-more">{SEE_TOUR_TEXT}</p>
+			<Image class="tours-text-arrow" src={arrowRight} alt="arrow right" />
+		</div>
+	</div>
 </a>
 
 <style>
+	.tours-card,
+	.tours-card:link,
+	.tours-card:visited {
+		position: relative;
+		text-decoration: none;
+		width: 100%;
+		height: 300px;
+		/* max-width: calc(50% - 12px); */
+		/* max-width: 420px; */
+		border-radius: 1em;
+		overflow: hidden;
+		-webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .tours-card,
-  .tours-card:link,
-  .tours-card:visited {
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-    height: 300px;
-    /* max-width: calc(50% - 12px); */
-    /* max-width: 420px; */
-    border-radius: 1em;
-    overflow: hidden;
-    -webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+	.tours-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 1em;
+	}
 
-  .tours-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1em;
-  }
+	.tours-card::after {
+		content: "";
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		background-color: rgba(0, 0, 0, 0.85);
+	}
 
-  .tours-card::after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: rgba(0, 0, 0, 0.85);
-  }
+	.tours-image-1 {
+		object-position: 20% center;
+	}
+	.tours-image-2 {
+		object-position: 60% center;
+	}
+	.tours-image-3 {
+		object-position: 70% center;
+	}
+	.tours-image-4 {
+		object-position: 30% center;
+	}
 
-  .tours-image-1 {
-    object-position: 20% center;
-  }
-  .tours-image-2 {
-    object-position: 60% center;
-  }
-  .tours-image-3 {
-    object-position: 70% center;
-  }
-  .tours-image-4 {
-    object-position: 30% center;
-  }
+	.tours-text-link {
+		z-index: 4;
+		font-size: 1.875rem;
+		line-height: 125%;
+		/* background-color: rgba(0, 0, 0, 0.85); */
+		padding: 16px;
+		color: #eee;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 16px;
+		text-align: center;
+		/* max-width: 70%; */
+	}
 
-  .tours-text-link {
-    z-index: 4;
-    font-size: 1.875rem;
-    line-height: 125%;
-    /* background-color: rgba(0, 0, 0, 0.85); */
-    padding: 16px;
-    color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-    /* max-width: 70%; */
-  }
+	.tour-text-see-more {
+		font-size: 1.09rem;
+	}
 
-  .tour-text-see-more {
-    font-size: 1.09rem;
-  }
+	.tours-icon-ctn {
+		display: flex;
+		gap: 8px;
+	}
 
-  .tours-icon-ctn {
-    display: flex;
-    gap: 8px;
-  }
+	.tours-text-arrow {
+		z-index: 4;
+		height: 36px;
+		width: auto;
+	}
 
-  .tours-text-arrow {
-    z-index: 4;
-    height: 36px;
-    width: auto;
-  }
-
-  @media (min-width: 768px){
-    .tours-card {
-      max-width: calc(50% - 12px);
-    }
-  }
+	@media (min-width: 768px) {
+		.tours-card {
+			max-width: calc(50% - 12px);
+		}
+	}
 </style>

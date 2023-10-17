@@ -10,147 +10,79 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const TITLE_TEXT = t(`home.services.title`);
+const BUTTON_TEXT = t(`home.services.button`);
 //@ts-ignore
 const getTitle = (index) => t(`home.services.service-${index}.title`);
 //@ts-ignore
 const getDesc = (index) => t(`home.services.service-${index}.description`);
 ---
 
-<section class="services-ctn" id="services">
-  <h2 class="services-title">Nuestros Servicios</h2>
-  <button class="services-prices-button"
-    >Horarios de atención y precios 💵</button
-  >
-  <div
-    class="flex flex-col w-full items-center gap-24 brightness-75 lg:max-w-[956px]"
-  >
-    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("1")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("1")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background1}
-        alt="xdsdsa"
-      />
-    </div>
+<section class="relative mt-20 flex flex-col items-center justify-center gap-y-4 px-7" id="services">
+	<h2 class="text-center text-5xl leading-none text-gray-900">{TITLE_TEXT}</h2>
+	<button
+		class="mb-3 cursor-pointer select-none rounded-full border border-solid border-green-950 bg-transparent px-4 py-2 text-base text-gray-900 no-underline"
+		>{BUTTON_TEXT} 💵</button
+	>
+	<div class="flex w-full flex-col items-center gap-16 brightness-75 lg:max-w-[956px]">
+		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("1")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("1")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background1} alt="xdsdsa" />
+		</div>
 
-    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("2")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("2")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background2}
-        alt="xdsdsa"
-      />
-    </div>
+		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("2")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("2")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background2} alt="xdsdsa" />
+		</div>
 
-    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("3")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("3")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background3}
-        alt="xdsdsa"
-      />
-    </div>
+		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("3")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("3")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background3} alt="xdsdsa" />
+		</div>
 
-    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("4")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("4")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background4}
-        alt="xdsdsa"
-      />
-    </div>
+		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("4")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("4")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background4} alt="xdsdsa" />
+		</div>
 
-    <div class="flex flex-col gap-8 items-center lg:flex-row-reverse lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("5")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("5")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background5}
-        alt="xdsdsa"
-      />
-    </div>
+		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("5")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("5")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background5} alt="xdsdsa" />
+		</div>
 
-    <div class="flex flex-col gap-8 items-center lg:flex-row lg:gap-0">
-      <div class="flex flex-col">
-        <h3 class="text-3xl text-center mb-6">{getTitle("6")}</h3>
-        <p class="text-xl flex justify-center items-center lg:px-8">
-          {getDesc("6")}
-        </p>
-      </div>
-      <Image
-        class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
-        src={background6}
-        alt="xdsdsa"
-      />
-    </div>
-  </div>
+		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+			<div class="flex flex-col">
+				<h3 class="mb-6 text-center text-3xl">{getTitle("6")}</h3>
+				<p class="flex items-center justify-center text-xl lg:px-8">
+					{getDesc("6")}
+				</p>
+			</div>
+			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background6} alt="xdsdsa" />
+		</div>
+	</div>
 </section>
-
-<style>
-  .services-ctn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 26px;
-    row-gap: 16px;
-    margin-top: 75px;
-    position: relative;
-  }
-
-  .services-title {
-    color: #13260f;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 100%;
-  }
-
-  .services-prices-button {
-    background-color: transparent;
-    border-radius: 1.6em;
-    border: 2px solid #13260f;
-    color: #13260f;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5em 0.75em;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    margin-bottom: 12px;
-  }
-
-  .services-cards-slider {
-    width: 100%;
-    max-width: 420px;
-  }
-
-  @media (min-width: 768px) {
-    .services-cards-slider {
-      max-width: 1000px;
-    }
-  }
-</style>

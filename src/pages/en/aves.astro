@@ -2,110 +2,101 @@
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
 
-const images = await Astro.glob("../../images/gallery/birds/*").then(
-  (files) => {
-    const images = files.map((file) => {
-      const src = file.default.src;
-      const parts = src.split("/");
-      const filename = parts[parts.length - 1];
-      const nameWithoutExtension = filename.split(".")[0];
-      const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
-      return {
-        ...file.default,
-        name: nameWithSpaces,
-      };
-    });
-    return images;
-  }
-);
+const images = await Astro.glob("../../images/gallery/birds/*").then((files) => {
+	const images = files.map((file) => {
+		const src = file.default.src;
+		const parts = src.split("/");
+		const filename = parts[parts.length - 1];
+		const nameWithoutExtension = filename.split(".")[0];
+		const nameWithSpaces = nameWithoutExtension.replace(/_/g, " ");
+		return {
+			...file.default,
+			name: nameWithSpaces
+		};
+	});
+	return images;
+});
 ---
 
-<Layout title="Welcome to Astro.">
-  <div class="gallery-ctn">
-    <h1 class="gallery-bird-title">Galería de Aves</h1>
-    <div class="gallery-bird-ctn">
-      {
-        images.map((image, index) => (
-          <div class="gallery-img-ctn">
-            <h3 class="gallery-img-title">{image.name}</h3>
-            {index === 0 ? (
-              <Image
-                class="gallery-img"
-                src={image}
-                alt={image.name}
-                loading="lazy"
-                width="480"
-                height="300"
-                transition:name="gallery-bird"
-              />
-            ) : (
-              <Image
-                class="gallery-img"
-                src={image}
-                alt={image.name}
-                loading="lazy"
-                width="480"
-                height="300"
-              />
-            )}
-          </div>
-        ))
-      }
-    </div>
-  </div>
+<Layout title="Album de aves" textColor="text-green-waqanki">
+	<div class="gallery-ctn">
+		<h1 class="gallery-bird-title">Galería de Aves</h1>
+		<div class="gallery-bird-ctn">
+			{
+				images.map((image, index) => (
+					<div class="gallery-img-ctn">
+						<h3 class="gallery-img-title">{image.name}</h3>
+						{index === 0 ? (
+							<Image
+								class="gallery-img"
+								src={image}
+								alt={image.name}
+								loading="lazy"
+								width="480"
+								height="300"
+								transition:name="gallery-bird"
+							/>
+						) : (
+							<Image class="gallery-img" src={image} alt={image.name} loading="lazy" width="480" height="300" />
+						)}
+					</div>
+				))
+			}
+		</div>
+	</div>
 </Layout>
 
 <style>
-  .gallery-ctn {
-    width: 100%;
-    background-color: #3fb54b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #eee;
-    padding: 120px 0;
-    gap: 36px;
-  }
+	.gallery-ctn {
+		width: 100%;
+		background-color: #3fb54b;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		color: #eee;
+		padding: 120px 0;
+		gap: 36px;
+	}
 
-  .gallery-bird-title {
-    font-size: 3rem;
-  }
+	.gallery-bird-title {
+		font-size: 3rem;
+	}
 
-  .gallery-bird-ctn {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    gap: 38px 32px;
-    align-items: center;
-    justify-content: center;
-  }
+	.gallery-bird-ctn {
+		display: flex;
+		flex-wrap: wrap;
+		width: 90%;
+		gap: 38px 32px;
+		align-items: center;
+		justify-content: center;
+	}
 
-  .gallery-img-ctn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
+	.gallery-img-ctn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+	}
 
-  .gallery-img-title {
-    color: #eee;
-    font-size: 1.5rem;
-  }
+	.gallery-img-title {
+		color: #eee;
+		font-size: 1.5rem;
+	}
 
-  .gallery-img {
-    width: 300px;
-    height: 188px;
-    -webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
-    border: 1px solid #24912f;
-  }
+	.gallery-img {
+		width: 300px;
+		height: 188px;
+		-webkit-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		-moz-box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		box-shadow: 10px 10px 30px -7px rgba(0, 0, 0, 0.5);
+		border: 1px solid #24912f;
+	}
 
-  @media (min-width: 768px) {
-    .gallery-img {
-      width: 480px;
-      height: 300px;
-    }
-  }
+	@media (min-width: 768px) {
+		.gallery-img {
+			width: 480px;
+			height: 300px;
+		}
+	}
 </style>
