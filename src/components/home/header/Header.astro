@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import background from "../../../images/background_home.png";
-import Modal from "../../Modal.astro";
 import Wave from "./Wave.astro";
 import Open from "../../sources/Open.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
@@ -17,9 +16,10 @@ const DESCRIPTION_TEXT = t("home.header.info");
 	document.addEventListener(
 		"astro:page-load",
 		() => {
-			const modal = document.getElementById("modal-content");
-			const close = document.querySelector<HTMLElement>(".modal-close");
-			const button = document.querySelector<HTMLElement>(".header-button");
+			const modal = document.getElementById("modal-header");
+			const close = document.querySelector<HTMLElement>(".modal-close-header");
+			const button = document.getElementById("header-button");
+
 			if (button && modal && close) {
 				button.onclick = (event) => {
 					modal.style.display = "flex";
@@ -30,14 +30,12 @@ const DESCRIPTION_TEXT = t("home.header.info");
 					event.stopPropagation();
 				};
 
-				window.onclick = (event) => {
-					if (event.target == modal || event.target == close) {
-						document.body.style.overflow = "auto";
-						setTimeout(() => {
-							modal.style.display = "none";
-						}, 500);
-						modal.style.opacity = "0";
-					}
+				close.onclick = (event) => {
+					document.body.style.overflow = "auto";
+					setTimeout(() => {
+						modal.style.display = "none";
+					}, 500);
+					modal.style.opacity = "0";
 				};
 			}
 		},
@@ -51,18 +49,18 @@ const DESCRIPTION_TEXT = t("home.header.info");
 	<div class="header-info">
 		<h1 class="header-title">WAQANKI ECOLODGE</h1>
 		<p class="header-paragraph">{BUTTON_SHORT_INFO}</p>
-		<button class="header-button">{BUTTON_TEXT} <Open /></button>
+		<button id="header-button" class="header-button">{BUTTON_TEXT} <Open /></button>
 	</div>
 	<Wave opacity=".5" position="header-wave-first" />
 	<Wave opacity=".5" position="header-wave-second" />
 	<Wave opacity="1" position="header-wave-third" />
 
 	<div
-		id="modal-content"
-		class="fixed top-0 z-50 hidden h-full w-full bg-[rgba(0,0,0,0.65)] opacity-0 transition-opacity duration-[0.5s]"
+		id="modal-header"
+		class="fixed top-0 z-[80] hidden h-full w-full bg-[rgba(0,0,0,0.65)] opacity-0 transition-opacity duration-[0.5s]"
 	>
-		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl bg-[#eee] lg:w-[70%]">
-			<button class="modal-close ml-auto h-auto w-6">X</button>
+		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl bg-[#eee] p-6 lg:w-[70%]">
+			<button class="modal-close-header ml-auto h-auto w-6 font-bold">X</button>
 			<p class="px-2 text-base lg:px-4">
 				{DESCRIPTION_TEXT}
 			</p>

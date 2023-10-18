@@ -7,7 +7,6 @@ import background4 from "../../../images/services/service-4.jpg";
 import background5 from "../../../images/services/service-5.jpg";
 import background6 from "../../../images/services/service-6.jpg";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
-import Modal from "../../Modal.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -36,14 +35,12 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 					event.stopPropagation();
 				};
 
-				window.onclick = (event) => {
-					if (event.target == modal || event.target == close) {
-						document.body.style.overflow = "auto";
-						setTimeout(() => {
-							modal.style.display = "none";
-						}, 500);
-						modal.style.opacity = "0";
-					}
+				close.onclick = (event) => {
+					document.body.style.overflow = "auto";
+					setTimeout(() => {
+						modal.style.display = "none";
+					}, 500);
+					modal.style.opacity = "0";
 				};
 			}
 		},
@@ -124,11 +121,11 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 		id="modal-services"
 		class="fixed top-0 z-50 hidden h-full w-full bg-[rgba(0,0,0,0.65)] opacity-0 transition-opacity duration-[0.5s]"
 	>
-		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl  bg-white lg:w-[70%] p-6">
-			<button class="modal-close-services ml-auto h-auto w-6">X</button>
+		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl bg-white p-6 lg:w-[70%]">
+			<button class="modal-close-services ml-auto h-auto w-6 font-bold">X</button>
 			<div class="flex w-full items-center justify-center">
 				<table class="w-full text-left text-sm text-gray-900">
-					<thead class="bg-gray-50 text-xs uppercase text-gray-900 ">
+					<thead class="bg-gray-50 text-xs uppercase text-gray-900">
 						<tr>
 							<th scope="col" class="px-6 py-3">Lugar</th>
 							<th scope="col" class="px-6 py-3">Precio</th>

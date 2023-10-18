@@ -9,7 +9,7 @@ import facebook from "../../images/fb.webp";
 import book from "../../images/bk.webp";
 
 interface Props {
-  textColor: string;
+	textColor: string;
 }
 
 const { textColor } = Astro.props;
@@ -23,7 +23,10 @@ const UBICATION_TEXT = t(`home.footer.ubication`);
 const LAW_TEXT = t(`home.footer.law`);
 ---
 
-<section class=`relative grid items-center gap-y-6 bg-[#4d1f1d] px-9 py-0 pt-24 lg:grid-cols-3 lg:px-24 ${textColor}` id="footer">
+<section
+	class=`relative grid items-center gap-y-6 bg-[#4d1f1d] px-9 py-0 pt-24 lg:grid-cols-3 lg:px-24 ${textColor}`
+	id="footer"
+>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 1440 320"
@@ -38,10 +41,10 @@ const LAW_TEXT = t(`home.footer.law`);
 	</svg>
 	<div class="flex flex-col gap-4 lg:order-1">
 		<h3 class="text-center text-3xl text-slate-50">{CONTACT_TEXT}</h3>
-		<div class="flex w-full text-base text-slate-50 justify-center">
-			<p class="flex items-center gap-2  text-center"><Location />Carretera Baños Termales Km. 03 Moyobamba - Perú</p>
+		<div class="flex w-full flex-col items-center text-base text-slate-50">
+			<p class="flex items-center gap-2"><Location />Carretera Baños Termales Km. 03 Moyobamba - Perú</p>
 		</div>
-		<div class="flex w-full flex-col gap-2 text-base text-slate-50 items-center">
+		<div class="flex w-full flex-col items-center gap-2 text-base text-slate-50">
 			<p class="flex items-center gap-2">
 				<Email /> reservas@waqankiecolodge.com
 			</p>
@@ -50,7 +53,7 @@ const LAW_TEXT = t(`home.footer.law`);
 			</p>
 			<p class="flex items-center gap-2"><Email /> birdinainmovo@amail.com</p>
 		</div>
-		<div class="flex w-full flex-col gap-2 text-base text-slate-50 items-center">
+		<div class="flex w-full flex-col items-center gap-2 text-base text-slate-50">
 			<p class="flex items-center gap-2"><Phone /> +51 964 785 853</p>
 			<p class="flex items-center gap-2"><Phone /> +51 964016947</p>
 			<p class="flex items-center gap-2"><Phone /> +51 956 034 628</p>
@@ -59,7 +62,7 @@ const LAW_TEXT = t(`home.footer.law`);
 
 	<div class="mt-6 flex w-full flex-col gap-4 lg:order-2 lg:mt-0">
 		<h3 class="text-center text-3xl text-slate-50">{SOCIAL_TEXT}</h3>
-		<div class="flex w-full justify-around lg: lg:items-center lg:justify-center lg:gap-6">
+		<div class="lg: flex w-full justify-around lg:items-center lg:justify-center lg:gap-6">
 			<Image class="h-auto w-16" src={facebook} alt="Icon facebook" />
 			<Image class="h-auto w-16" src={youtube} alt="Icon youtube" />
 			<Image class="h-auto w-16" src={book} alt="Icon book" />
@@ -80,121 +83,3 @@ const LAW_TEXT = t(`home.footer.law`);
 		© 2017, Waqanki Ecologde Perú. {LAW_TEXT}.
 	</p>
 </section>
-
-<style>
-	/* .footer-ctn {
-    display: flex;
-    flex-direction: column;
-    background-color: #3fb54b;
-    row-gap: 24px;
-    padding: 0 36px;
-    align-items: center;
-    padding-top: 75px;
-  } */
-
-	/* .footer-title {
-		color: #f2f2f2;
-		font-size: 1.56rem;
-		text-align: center;
-	} */
-
-	/* .footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  } */
-
-	/* .footer-info-ctn {
-		display: flex;
-		width: 100%;
-		gap: 8px;
-		font-size: 1rem;
-		color: #eee;
-		flex-direction: column;
-	} */
-
-	/* .footer-info-ctn p {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-	} */
-
-	/* .footer-info-ellipsis {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	} */
-
-	/* .footer-info-icon-ctn {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 8px;
-	} */
-
-	/* .footer-network {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-		margin-bottom: 24px;
-		width: 100%;
-	} */
-
-	/* .footer-networks {
-		display: flex;
-		width: 100%;
-		justify-content: space-around;
-	} */
-
-	/* .footer-networks-img {
-		width: 60px;
-		height: auto;
-	} */
-
-	/* .footer-map {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-	}
-
-	.footer-title-map {
-		border-radius: 1.6em;
-	}
-
-	.footer-credits {
-		font-size: 1rem;
-		color: #eee;
-		text-align: center;
-		padding: 24px 0;
-	} */
-
-	@media (min-width: 786px) {
-		.footer-ctn {
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: center;
-			column-gap: 16px;
-		}
-
-		.footer-network {
-			width: auto;
-			margin: 0;
-		}
-
-		.footer-networks {
-			flex-direction: column;
-			align-items: center;
-			width: auto;
-			gap: 16px;
-		}
-
-		.footer-credits {
-			flex-shrink: 0;
-			flex: none;
-		}
-
-		.footer-credits {
-			width: 100%;
-		}
-	}
-</style>
