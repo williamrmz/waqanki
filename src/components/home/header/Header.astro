@@ -10,26 +10,13 @@ const t = useTranslations(lang);
 
 const BUTTON_TEXT = t("home.header.button");
 const BUTTON_SHORT_INFO = t("home.header.short-info");
-
-// Obtiene el fragmento actual de la URL
-
-// Genera un fragmento dinámico (en este caso, se supone que es una variable llamada "dynamicFragment")
-// const dynamicFragment = "#reservas"; // Debes reemplazar esto con tu lógica dinámica
-
-// Crea un enlace con el fragmento dinámico
-// const link = document.createElement("a");
-// link.href = `/suites/${dynamicFragment}`;
-// link.textContent = "Ir a Suites";
-
-// Agrega el enlace al DOM
-// document.body.appendChild(link);
+const DESCRIPTION_TEXT = t("home.header.info");
 ---
 
 <script>
 	document.addEventListener(
 		"astro:page-load",
 		() => {
-
 			const modal = document.getElementById("modal-content");
 			const close = document.querySelector<HTMLElement>(".modal-close");
 			const button = document.querySelector<HTMLElement>(".header-button");
@@ -69,7 +56,18 @@ const BUTTON_SHORT_INFO = t("home.header.short-info");
 	<Wave opacity=".5" position="header-wave-first" />
 	<Wave opacity=".5" position="header-wave-second" />
 	<Wave opacity="1" position="header-wave-third" />
-	<Modal title="title" description="falta poner la desc" />
+
+	<div
+		id="modal-content"
+		class="fixed top-0 z-50 hidden h-full w-full bg-[rgba(0,0,0,0.65)] opacity-0 transition-opacity duration-[0.5s]"
+	>
+		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl bg-[#eee] lg:w-[70%]">
+			<button class="modal-close ml-auto h-auto w-6">X</button>
+			<p class="px-2 text-base lg:px-4">
+				{DESCRIPTION_TEXT}
+			</p>
+		</div>
+	</div>
 </header>
 
 <style>

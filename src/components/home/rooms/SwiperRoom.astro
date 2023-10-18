@@ -8,142 +8,141 @@ import ArrowRight from "../../sources/ArrowRight.astro";
 ---
 
 <script>
-  const roomText = [
-    ...document.querySelectorAll<HTMLElement>(".room-ctn-text"),
-  ];
-  const roomsSlider = document.querySelector<HTMLElement>(".rooms");
-  const roomBtns = document.querySelectorAll<HTMLElement>(".room-btn");
-  const rooms = [...document.querySelectorAll<HTMLElement>(".room-card")];
-  let isMoving = false;
-  let currentIndex = 1;
+	document.addEventListener(
+		"astro:page-load",
+		() => {
+			const roomText = [...document.querySelectorAll<HTMLElement>(".room-ctn-text")];
+			const roomsSlider = document.querySelector<HTMLElement>(".rooms");
+			const roomBtns = document.querySelectorAll<HTMLElement>(".room-btn");
+			const rooms = [...document.querySelectorAll<HTMLElement>(".room-card")];
+			let isMoving = false;
+			let currentIndex = 1;
 
-  function moveSlider() {
-    if (roomsSlider) {
-      roomsSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  }
+			function moveSlider() {
+				if (roomsSlider) {
+					roomsSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+				}
+			}
 
-  function handleRoomBtnClick(e: any) {
-    if (isMoving) {
-      return;
-    }
-    isMoving = true;
+			function handleRoomBtnClick(e: any) {
+				if (isMoving) {
+					return;
+				}
+				isMoving = true;
 
-    // Modificar el avance/retroceso en función del botón clicado
-    if (e.currentTarget.id === "next") {
-      currentIndex += 1; // Avanzar de dos en dos
-    } else {
-      currentIndex -= 1; // Retroceder de dos en dos
-    }
+				// Modificar el avance/retroceso en función del botón clicado
+				if (e.currentTarget.id === "next") {
+					currentIndex += 1; // Avanzar de dos en dos
+				} else {
+					currentIndex -= 1; // Retroceder de dos en dos
+				}
 
-    moveSlider();
-  }
+				moveSlider();
+			}
 
-  roomBtns.forEach((btn) => {
-    btn.addEventListener("click", handleRoomBtnClick);
-  });
+			roomBtns.forEach((btn) => {
+				btn.addEventListener("click", handleRoomBtnClick);
+			});
 
-  if (roomsSlider) {
-    roomsSlider.addEventListener("transitionend", () => {
-      isMoving = false;
+			if (roomsSlider) {
+				roomsSlider.addEventListener("transitionend", () => {
+					isMoving = false;
 
-      if (currentIndex === 0) {
-        currentIndex = rooms.length - 2;
-        roomsSlider.style.transitionDuration = "1ms";
-        return moveSlider();
-      }
-      if (currentIndex === rooms.length - 1) {
-        currentIndex = 1;
-        roomsSlider.style.transitionDuration = "1ms";
-        return moveSlider();
-      }
-      roomsSlider.style.transitionDuration = "300ms";
+					if (currentIndex === 0) {
+						currentIndex = rooms.length - 2;
+						roomsSlider.style.transitionDuration = "1ms";
+						return moveSlider();
+					}
+					if (currentIndex === rooms.length - 1) {
+						currentIndex = 1;
+						roomsSlider.style.transitionDuration = "1ms";
+						return moveSlider();
+					}
+					roomsSlider.style.transitionDuration = "300ms";
 
-      // muestra y oculta room correcto
-      roomText.forEach((element: any, index) => {
-        const hasSisterClass =
-          element.parentElement.classList.contains("room-ctn-show");
-        if (!hasSisterClass && index === currentIndex - 1) {
-          element.classList.add("room-ctn-show");
-        } else {
-          element.classList.remove("room-ctn-show");
-        }
-      });
-    });
-  }
+					// muestra y oculta room correcto
+					roomText.forEach((element: any, index) => {
+						const hasSisterClass = element.parentElement.classList.contains("room-ctn-show");
+						if (!hasSisterClass && index === currentIndex - 1) {
+							element.classList.add("room-ctn-show");
+						} else {
+							element.classList.remove("room-ctn-show");
+						}
+					});
+				});
+			}
+		},
+		{ once: false }
+	);
 </script>
 
 <div class="rooms-wrapper">
-  <div class="rooms-container">
-    <button
-      class="room-btn room-btn--prev"
-      id="prev"
-      aria-label="Previous Room"
-    >
-      <ArrowLeft size={35} color="#4d1f1d" />
-    </button>
-    <div class="rooms">
-      <Card cardIndex="3" src={background3} price="70" />
-      <Card cardIndex="1" src={background1} price="90" />
-      <Card cardIndex="2" src={background2} price="90" />
-      <Card cardIndex="3" src={background3} price="70" />
-      <Card cardIndex="1" src={background1} price="90" />
-    </div>
-    <button class="room-btn room-btn--next" id="next" aria-label="Next Room">
-      <ArrowRight size={35} color="#4d1f1d" />
-    </button>
-  </div>
+	<div class="rooms-container">
+		<button class="room-btn room-btn--prev" id="prev" aria-label="Previous Room">
+			<ArrowLeft size={35} color="#4d1f1d" />
+		</button>
+		<div class="rooms">
+			<Card cardIndex="3" src={background3} price="70" />
+			<Card cardIndex="1" src={background1} price="90" />
+			<Card cardIndex="2" src={background2} price="90" />
+			<Card cardIndex="3" src={background3} price="70" />
+			<Card cardIndex="1" src={background1} price="90" />
+		</div>
+		<button class="room-btn room-btn--next" id="next" aria-label="Next Room">
+			<ArrowRight size={35} color="#4d1f1d" />
+		</button>
+	</div>
 </div>
 
 <style>
-  .rooms-wrapper {
-    /* margin: 0 16px; */
-    position: relative;
-  }
+	.rooms-wrapper {
+		/* margin: 0 16px; */
+		position: relative;
+	}
 
-  .rooms-wrapper::after,
-  .rooms-wrapper::before {
-    inset-inline: 20%;
-  }
+	.rooms-wrapper::after,
+	.rooms-wrapper::before {
+		inset-inline: 20%;
+	}
 
-  .rooms-container {
-    overflow: hidden;
-    /* max-width: 380px; */
-    width: 100%;
-    margin: auto;
-  }
+	.rooms-container {
+		overflow: hidden;
+		/* max-width: 380px; */
+		width: 100%;
+		margin: auto;
+	}
 
-  .rooms {
-    display: flex;
-    /* margin: 32px 0; */
-    text-align: center;
-    transform: translateX(-100%);
-    transition: transform 300ms ease-in-out;
-    /* height: 460px; */
-  }
+	.rooms {
+		display: flex;
+		/* margin: 32px 0; */
+		text-align: center;
+		transform: translateX(-100%);
+		transition: transform 300ms ease-in-out;
+		/* height: 460px; */
+	}
 
-  .room-btn {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    background: transparent;
-    border: none;
-    color: black;
-    width: 40px;
-    cursor: pointer;
-    transition: all 300ms cubic-bezier(0.5, -0.3, 0.1, 1.5);
-    place-items: center;
-    /* margin: 32px 0; */
-  }
+	.room-btn {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		bottom: 0;
+		background: transparent;
+		border: none;
+		color: black;
+		width: 40px;
+		cursor: pointer;
+		transition: all 300ms cubic-bezier(0.5, -0.3, 0.1, 1.5);
+		place-items: center;
+		/* margin: 32px 0; */
+	}
 
-  .room-btn--prev {
-    /* left: -26px; */
-    left: 0;
-  }
+	.room-btn--prev {
+		/* left: -26px; */
+		left: 0;
+	}
 
-  .room-btn--next {
-    /* right: -26px; */
-    right: 0;
-  }
+	.room-btn--next {
+		/* right: -26px; */
+		right: 0;
+	}
 </style>
