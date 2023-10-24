@@ -18,7 +18,14 @@ const SEE_TOUR_TEXT = t(`home.tours.see-tour`);
 ---
 
 <a href={translatePath(route)} class="tours-card">
-	<Image class={`tours-image tours-image-${index}`} src={src} alt={title} transition:name={name} />
+	<Image
+		class={`tours-image tours-image-${index} brightness-[20%]`}
+		src={src}
+		alt={title}
+		transition:name={name}
+		width="650"
+		height="300"
+	/>
 	<div class="tours-text-link">
 		<p>{title}</p>
 		<div class="tours-icon-ctn">
@@ -58,7 +65,7 @@ const SEE_TOUR_TEXT = t(`home.tours.see-tour`);
 		border-radius: 1em;
 	}
 
-	.tours-card::after {
+	/* .tours-card::after {
 		content: "";
 		position: absolute;
 		top: 0px;
@@ -66,7 +73,7 @@ const SEE_TOUR_TEXT = t(`home.tours.see-tour`);
 		bottom: 0px;
 		left: 0px;
 		background-color: rgba(0, 0, 0, 0.85);
-	}
+	} */
 
 	.tours-image-1 {
 		object-position: 20% center;

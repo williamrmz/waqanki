@@ -2,7 +2,7 @@
 import Navbar from "../components/navbar/Navbar.astro";
 import Footer from "../components/footer/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
-import '@fontsource-variable/outfit';
+import '@fontsource-variable/inter';
 
 interface Props {
   title: string;
@@ -40,7 +40,7 @@ const lang = getLangFromUrl(Astro.url);
       body {
         background-color: #eeeeee;
         box-sizing: border-box;
-        font-family: 'Outfit Variable', sans-serif;
+        font-family: 'Inter', sans-serif;
         margin: 0;
         padding: 0;
         font-size: 16px;

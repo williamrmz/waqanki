@@ -35,8 +35,8 @@ const GALLERY = t("nav.gallery");
 <nav
 	class="nav-ctn fixed z-50 box-border grid w-full grid-cols-2 items-center justify-between overflow-hidden bg-black/80 px-3 py-2 lg:flex lg:px-6 lg:py-2"
 >
-	<a class="col-span-1" href="/">
-		<Image class="h-full max-w-[130px] px-[5px]" src={logo} alt="Logo Waqanki" />
+	<a class="col-span-1" href={translatePath("/#header")}>
+		<Image class="h-full max-w-[130px] px-[5px]" src={logo} alt="Logo Waqanki" width="130" />
 	</a>
 
 	<input type="checkbox" name="hamburger" id="hamburger" class="peer hidden" />

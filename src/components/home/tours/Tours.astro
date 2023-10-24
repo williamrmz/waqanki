@@ -7,62 +7,47 @@ import Card from "./Card.astro";
 ---
 
 <section class="tours-ctn" id="tours">
-  <h2 class="tours-title">Tours</h2>
-  <div class="tours-cards-ctn">
-    <Card
-      title="Northen Perú"
-      src={tour1}
-      index="1"
-      route="/tour/main/"
-      name="tour-main"
-    />
-    <Card
-      title="Scarlet Banded Barbet"
-      src={tour2}
-      index="2"
-      route="/tour/scarlet/"
-      name="tour-scarlet"
-    />
-    <Card
-      title="White-Masket Antibird"
-      src={tour3}
-      index="3"
-      route="/tour/white/"
-      name="tour-white"
-    />
-    <Card
-      title="Yellow Faced Parrotlet-Purple Backed Subean"
-      src={tour4}
-      index="4"
-      route="/tour/yellow/"
-      name="tour-yellow"
-    />
-  </div>
+	<h2 class="tours-title">Tours</h2>
+	<div class="tours-cards-ctn">
+		<Card title="Northen Perú" src={tour1} index="1" route="/tour/main/" name="tour-main" />
+		<Card title="Scarlet Banded Barbet" src={tour2} index="2" route="/tour/scarlet/" name="tour-scarlet" />
+		<Card title="White-Masket Antibird" src={tour3} index="3" route="/tour/white/" name="tour-white" />
+		<Card
+			title="Yellow Faced Parrotlet-Purple Backed Subean"
+			src={tour4}
+			index="4"
+			route="/tour/yellow/"
+			name="tour-yellow"
+		/>
+	</div>
 </section>
 
 <style>
-  .tours-ctn {
-    display: flex;
-    flex-direction: column;
-    background-color: #3fb54b;
-    row-gap: 24px;
-    padding: 0 36px 48px;
-    align-items: center;
-  }
+	.tours-ctn {
+		display: flex;
+		flex-direction: column;
+		background-color: #3fb54b;
+		row-gap: 24px;
+		padding: 0 36px 48px;
+		align-items: center;
+	}
 
-  .tours-title {
-    color: #f2f2f2;
-    font-size: 3rem;
-    text-align: center;
-  }
+	.tours-title {
+		color: #f2f2f2;
+		font-size: 3rem;
+		text-align: center;
+		text-shadow: 1px 2px #3a3a3a;
+		/* -webkit-text-stroke-color: #000;
+		-webkit-text-stroke-width: 0.1px; */
+	}
 
-  .tours-cards-ctn {
-    display: flex;
-    flex-direction: column;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 956px;
-    row-gap: 24px;
-  }
+	.tours-cards-ctn {
+		display: flex;
+		flex-direction: column;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-width: 956px;
+		row-gap: 24px;
+	}
 </style>

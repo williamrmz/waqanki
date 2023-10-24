@@ -1,97 +1,70 @@
-<form class="room-ctn-revervation">
-  <input
-    class="room-input"
-    type="text"
-    placeholder="Nombres"
-    required
-    minlength="4"
-    maxlength="20"
-  />
-  <input
-    class="room-input"
-    type="text"
-    placeholder="Apellidos"
-    required
-    minlength="4"
-    maxlength="20"
-  />
-  <input
-    class="room-input"
-    type="email"
-    placeholder="Correo"
-    required
-    minlength="7"
-    maxlength="20"
-  />
-  <input
-    class="room-input"
-    type="tel"
-    placeholder="Celular / Telf"
-    required
-    minlength="6"
-    maxlength="20"
-  />
-  <input
-    class="room-input"
-    type="text"
-    placeholder="Fecha de llegada"
-    required
-    minlength="3"
-    maxlength="30"
-  />
-  <input
-    class="room-input"
-    type="text"
-    placeholder="Fecha de salida"
-    required
-    minlength="3"
-    maxlength="30"
-  />
-  <button class="room-button" type="submit">Solicitar reserva</button>
+---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const TEXT_INPUT_NAME = t("home.rooms.form.names");
+const TEXT_INPUT_LASTNAME = t("home.rooms.form.lastnames");
+const TEXT_INPUT_EMAIL = t("home.rooms.form.email");
+const TEXT_INPUT_CEL = t("home.rooms.form.cel");
+const TEXT_INPUT_DATE = t("home.rooms.form.date");
+const TEXT_INPUT_COMMENT = t("home.rooms.form.comment");
+const TEXT_INPUT_BUTTON = t("home.rooms.form.button");
+---
+
+<form
+	class="box-border flex h-full w-full flex-col gap-y-2 bg-[#b5483f] p-4"
+	action="https://formsubmit.co/7d075a688dbc0d0824053444ac34a746"
+	method="POST"
+>
+	<input
+		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
+		type="text"
+		placeholder={TEXT_INPUT_NAME}
+		required
+		minlength="4"
+		maxlength="20"
+		name="nombres"
+	/>
+	<input
+		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
+		type="text"
+		placeholder={TEXT_INPUT_LASTNAME}
+		required
+		minlength="4"
+		maxlength="20"
+		name="apellido"
+	/>
+	<input
+		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
+		type="email"
+		placeholder={TEXT_INPUT_EMAIL}
+		required
+		minlength="7"
+		maxlength="50"
+		name="email"
+	/>
+	<input
+		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
+		type="tel"
+		placeholder={TEXT_INPUT_CEL}
+		required
+		minlength="6"
+		maxlength="20"
+		name="telefono"
+	/>
+	<input
+		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
+		onblur="(this.type='text')"
+		onfocus="(this.type='date')"
+		placeholder={TEXT_INPUT_DATE}
+		type="text"
+		name="fecha"
+	/>
+	<textarea class="rounded-md border border-[#4d1f1d] px-4 py-2" placeholder={TEXT_INPUT_COMMENT} name="comentario"
+	></textarea>
+	<button
+		class="mt-[0.45em] cursor-pointer select-none rounded-[1em] border border-solid border-[#4c201f] bg-[#4d1f1d] px-[0.45em] py-[0.3em] text-base font-semibold text-slate-50 no-underline [-webkit-user-select:none]"
+		type="submit">{TEXT_INPUT_BUTTON}</button
+	>
 </form>
-
-<style>
-
-  .room-ctn-revervation {
-    background-color: #b5483f;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 16px;
-    row-gap: 8px;
-    width: 100%;
-  }
-
-  .room-input {
-    border-radius: 4px;
-    height: 1.7rem;
-    font-size: 1rem;
-    padding: 8px 16px;
-    border: 1px solid #4c201f;
-  }
-
-  .room-input::placeholder {
-    font-size: 0.9rem;
-  }
-
-  .room-button {
-    background-color: #4d1f1d;
-    border-radius: 1em;
-    border: 1px solid #4c201f;
-    color: #eee;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.3em 0.45em;
-    transition:
-      color 0.15s ease-in-out,
-      background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out,
-      box-shadow 0.15s ease-in-out;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    margin-top: 0.45em;
-    font-weight: 600;
-  }
-</style>

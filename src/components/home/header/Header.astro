@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import background from "../../../images/background_home.png";
+import backgroundMobile from "../../../images/background_home_mobile.png";
 import Wave from "./Wave.astro";
 import Open from "../../sources/Open.astro";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
@@ -43,11 +44,23 @@ const DESCRIPTION_TEXT = t("home.header.info");
 	);
 </script>
 
-<header class="header-ctn" id="header">
-	<Image class="header-background" src={background} alt="Logo Waqanki" />
-	<div class="header-overlay"></div>
-	<div class="header-info">
-		<h1 class="header-title">WAQANKI ECOLODGE</h1>
+<header class="relative h-screen" id="header">
+	<Image
+		class="absolute z-0 hidden h-full w-full bg-[#347738] object-cover brightness-[60%] lg:block"
+		src={background}
+		alt="Logo Waqanki"
+		width="1600"
+		height="900"
+	/>
+	<Image
+		class="absolute z-0 h-full w-full bg-[#347738] object-cover brightness-[60%] lg:hidden"
+		src={backgroundMobile}
+		alt="Logo Waqanki"
+		width="600"
+		height="400"
+	/>
+	<div class="absolute z-[2] m-0 flex h-full w-full flex-col items-center justify-center">
+		<h1 class="header-title font-bold">WAQANKI ECOLODGE</h1>
 		<p class="header-paragraph">{BUTTON_SHORT_INFO}</p>
 		<button id="header-button" class="header-button">{BUTTON_TEXT} <Open /></button>
 	</div>
@@ -69,34 +82,6 @@ const DESCRIPTION_TEXT = t("home.header.info");
 </header>
 
 <style>
-	.header-ctn {
-		height: 100vh;
-		position: relative;
-		/* width: 100vw; */
-	}
-
-	.header-background {
-		height: 100%;
-		object-fit: cover;
-		position: absolute;
-		width: 100%;
-		z-index: 0;
-		background-color: #347738;
-	}
-
-	.header-overlay {
-		height: 100%;
-		content: "";
-		position: absolute;
-		width: 100%;
-		z-index: 0;
-		background-color: rgba(0, 0, 0, 0.15);
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-	}
-
 	.header-info {
 		align-items: center;
 		display: flex;

@@ -7,16 +7,15 @@ const t = useTranslations(lang);
 interface Props {
   cardIndex: string;
   src: ImageMetadata;
-  price: string;
 }
-const { cardIndex, src, price } = Astro.props;
+const { cardIndex, src } = Astro.props;
 
 //@ts-ignore
 const ROOM_TEXT = t(`home.rooms.room-${cardIndex}`);
 ---
 
 <div class="room-card">
-  <Image src={src} alt={ROOM_TEXT} class="room-card-bg" />
+  <Image src={src} alt={ROOM_TEXT} class="room-card-bg" width="800" height="450" />
 </div>
 
 <style>

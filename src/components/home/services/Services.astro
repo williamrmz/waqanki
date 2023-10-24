@@ -49,7 +49,7 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 </script>
 
 <section class="relative mt-20 flex flex-col items-center justify-center gap-y-4 px-7" id="services">
-	<h2 class="text-center text-5xl leading-none text-gray-900">{TITLE_TEXT}</h2>
+	<h2 class="title text-center text-5xl font-medium leading-none text-gray-900">{TITLE_TEXT}</h2>
 	<button
 		id="services-button"
 		class="mb-3 cursor-pointer select-none rounded-full border border-solid border-green-950 bg-transparent px-4 py-2 text-base text-gray-900 no-underline"
@@ -58,62 +58,98 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 	<div class="flex w-full flex-col items-center gap-16 brightness-75 lg:max-w-[956px]">
 		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("1")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("1")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("1")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background1} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background1}
+				alt="jardín de orquídeas"
+				width="450"
+				height="255"
+			/>
 		</div>
 
-		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+		<div class="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("2")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("2")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("2")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background2} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background2}
+				alt="observatorio colibríes"
+				width="450"
+				height="255"
+			/>
 		</div>
 
-		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
+		<div class="flex flex-col items-center gap-4 lg:flex-row-reverse lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("3")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("3")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("3")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background3} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background3}
+				alt="alojamiento y retarurante"
+				width="450"
+				height="255"
+			/>
 		</div>
 
-		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+		<div class="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("4")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("4")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("4")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background4} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background4}
+				alt="ruta del café"
+				width="450"
+				height="255"
+			/>
 		</div>
 
-		<div class="flex flex-col items-center gap-8 lg:flex-row-reverse lg:gap-0">
+		<div class="flex flex-col items-center gap-4 lg:flex-row-reverse lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("5")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("5")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("5")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background5} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background5}
+				alt="trochas para observatorio"
+				width="450"
+				height="255"
+			/>
 		</div>
 
-		<div class="flex flex-col items-center gap-8 lg:flex-row lg:gap-0">
+		<div class="flex flex-col items-center gap-4 lg:flex-row lg:gap-0">
 			<div class="flex flex-col">
-				<h3 class="mb-6 text-center text-3xl">{getTitle("6")}</h3>
+				<h3 class="mb-4 text-center text-3xl font-normal lg:mb-6">{getTitle("6")}</h3>
 				<p class="flex items-center justify-center text-xl lg:px-8">
 					{getDesc("6")}
 				</p>
 			</div>
-			<Image class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4" src={background6} alt="xdsdsa" />
+			<Image
+				class="w-full max-w-[450px] rounded-lg shadow-xl lg:w-2/4"
+				src={background6}
+				alt="caminatas y cascada"
+				width="450"
+				height="255"
+			/>
 		</div>
 	</div>
 
@@ -121,11 +157,12 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 		id="modal-services"
 		class="fixed top-0 z-50 hidden h-full w-full bg-[rgba(0,0,0,0.65)] opacity-0 transition-opacity duration-[0.5s]"
 	>
-		<div class="m-auto box-border flex w-[400px] flex-col rounded-2xl bg-white p-6 lg:w-[70%]">
+		<div class="m-auto box-border flex w-[400px] max-w-xl flex-col rounded-2xl bg-white p-6 lg:w-[70%]">
 			<button class="modal-close-services ml-auto h-auto w-6 font-bold">X</button>
-			<div class="flex w-full items-center justify-center">
-				<table class="w-full text-left text-sm text-gray-900">
-					<thead class="bg-gray-50 text-xs uppercase text-gray-900">
+			<div class="flex w-full flex-col items-center justify-center gap-2">
+				<h3 class="text-xl">Horario de atención 7:00 am – 5:00 pm</h3>
+				<table class="w-full border border-gray-700 border-solid border-separate text-left text-sm text-gray-900 rounded-lg overflow-hidden">
+					<thead class="bg-gray-100 text-xs uppercase text-gray-900">
 						<tr>
 							<th scope="col" class="px-6 py-3">Lugar</th>
 							<th scope="col" class="px-6 py-3">Precio</th>
@@ -133,16 +170,16 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 					</thead>
 					<tbody>
 						<tr class="border-b hover:bg-gray-50">
-							<td>Jardín Orquideas y Observatorio de Colibríes</td>
-							<td>S/. 10.00</td>
+							<td class="p-2">Jardín Orquideas y Observatorio de Colibríes</td>
+							<td class="p-2">S/. 10.00</td>
 						</tr>
 						<tr class="border-b hover:bg-gray-50">
-							<td>Trochas spara observación de aves</td>
-							<td>S/. 20.00</td>
+							<td class="p-2">Trochas spara observación de aves</td>
+							<td class="p-2">S/. 20.00</td>
 						</tr>
-						<tr class="border-b hover:bg-gray-50">
-							<td>Fotografías en los jardines</td>
-							<td>S/. 20.00</td>
+						<tr class="hover:bg-gray-50">
+							<td class="p-2">Fotografías en los jardines</td>
+							<td class="p-2">S/. 20.00</td>
 						</tr>
 					</tbody>
 				</table>
@@ -150,3 +187,9 @@ const getDesc = (index) => t(`home.services.service-${index}.description`);
 		</div>
 	</div>
 </section>
+
+<style>
+	.title {
+		text-shadow: 1px 2px #d1d1d1;
+	}
+</style>
