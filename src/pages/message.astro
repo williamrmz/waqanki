@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "../i18n/utils";
+import ArrowLeft from "../components/sources/ArrowLeft.astro";
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+
+const TEXT_THANK = t("message.thank");
+const TEXT_BUTTON = t("message.button");
+---
+
+<Layout title="Reservación" textColor="text-green-waqanki">
+	<div class="flex h-screen flex-col items-center justify-center bg-green-waqanki">
+		<h1 class="max-w-4xl text-center text-2xl font-bold text-slate-50 [text-shadow:1px_2px_#3a3a3a] lg:text-6xl">
+			{TEXT_THANK}
+		</h1>
+		<a class="mt-5 flex items-center text-[#4d1f1d] lg:text-2xl" href={translatePath("/")}
+			><ArrowLeft size={24} /> {TEXT_BUTTON}</a
+		>
+	</div>
+</Layout>

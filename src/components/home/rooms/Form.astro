@@ -17,6 +17,10 @@ const TEXT_INPUT_BUTTON = t("home.rooms.form.button");
 	action="https://formsubmit.co/7d075a688dbc0d0824053444ac34a746"
 	method="POST"
 >
+	<input type="text" name="_honey" id="" style="display: none;" />
+	<input type="hidden" name="_captcha" value="false" />
+	<input type="hidden" name="_template" value="table" />
+	<input type="hidden" name="_next" value={`https://waqankiecolodge.com/${lang === "en" ? "en/" : ""}message`} />
 	<input
 		class="h-7 rounded-md border border-[#4d1f1d] px-4 py-2"
 		type="text"

@@ -17,7 +17,6 @@ const lang = getLangFromUrl(Astro.url);
 <!doctype html>
 <html lang={lang}>
   <head>
-    <!-- <meta http-equiv="refresh" content="0;url=/" /> -->
     <meta charset="UTF-8" />
     <meta name="description" content="Descubre que ofrecemos" />
     <meta name="viewport" content="width=device-width" />
@@ -28,7 +27,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <ViewTransitions fallback="swap" />
+    <ViewTransitions />
   </head>
   <body>
     <Navbar />

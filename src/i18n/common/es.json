@@ -124,5 +124,7 @@
 	"tours.yellow.ubication-3": "Hotel El Mirador-cajamarca.",
 	"tours.yellow.ubication-4": "Hotel Santa Maria-Huamachuco.",
 	"tours.yellow.ubication-5": "Hotel Due-Trujillo.",
-	"tours.yellow.ubication-6": "Inti Hotel-chiclayo."
+	"tours.yellow.ubication-6": "Inti Hotel-chiclayo.",
+	"message.thank": "Gracias por contactarnos, en las próximas horas se recepcionará su solicitú",
+	"message.button": "Regresar a la página principal"
 }
