@@ -11,7 +11,7 @@ export default {
 				"screen/5": "calc(100vh / 5)"
 			}),
 			colors: {
-				"green-waqanki": "#3fb54b"
+				"green-waqanki": "#37a342"
 			}
 		}
 	},
